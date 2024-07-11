@@ -24,7 +24,6 @@ import DeliveryOrderDetails from "./components/DeliveryDashboard/OrderDetails";
 import DeliverySettings from "./components/DeliveryDashboard/Settings";
 import DeliveryProfilePic from "./components/DeliveryDashboard/ProfilePic";
 import DeliveryChangePwd from "./components/DeliveryDashboard/ChangePwd";
-import Map from "./components/map/Map";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -48,7 +47,6 @@ function App() {
               element={<EmergencyService />}
             />
             <Route exact path="/order" element={<Order />} />
-            <Route exact path="/map" element={<Map />} />
             <Route exact path="/customer/settings/" element={<Settings />} />
             <Route exact path="/customer" element={<Dashboard />} />
             <Route
