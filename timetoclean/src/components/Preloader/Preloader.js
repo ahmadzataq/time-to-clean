@@ -18,7 +18,7 @@ const Preloader = () => {
 
 			<div className={message}>
 				<button className="btn btn-danger mt-3" onClick={refreshPage}>
-					Please Reload the Page
+					Silakan Muat Ulang Halaman
 				</button>
 			</div>
 		</div>

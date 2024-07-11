@@ -18,12 +18,6 @@ import Settings from "./components/UserDashboard/Settings";
 import ProfilePic from "./components/UserDashboard/ProfilePic";
 import ChangePwd from "./components/UserDashboard/ChangePwd";
 import OrderDetails from "./components/UserDashboard/OrderDetails";
-import DeliveryLogin from "./components/DeliveryDashboard/Login";
-import DeliveryDashboard from "./components/DeliveryDashboard/Dashboard";
-import DeliveryOrderDetails from "./components/DeliveryDashboard/OrderDetails";
-import DeliverySettings from "./components/DeliveryDashboard/Settings";
-import DeliveryProfilePic from "./components/DeliveryDashboard/ProfilePic";
-import DeliveryChangePwd from "./components/DeliveryDashboard/ChangePwd";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -60,28 +54,6 @@ function App() {
               element={<ProfilePic />}
             />
             <Route exact path="/customer/password" element={<ChangePwd />} />
-            <Route exact path="/delivery-login" element={<DeliveryLogin />} />
-            <Route
-              exact
-              path="/delivery/settings/"
-              element={<DeliverySettings />}
-            />
-            <Route exact path="/delivery" element={<DeliveryDashboard />} />
-            <Route
-              exact
-              path="/delivery/dashboard/:id"
-              element={<DeliveryOrderDetails />}
-            />
-            <Route
-              exact
-              path="/delivery/profile-picture"
-              element={<DeliveryProfilePic />}
-            />
-            <Route
-              exact
-              path="/delivery/password"
-              element={<DeliveryChangePwd />}
-            />
           </Routes>
           <Footer />
         </CartProvider>
