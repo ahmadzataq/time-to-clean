@@ -449,10 +449,10 @@ const DryCleaning = () => {
                   Select Service
                 </DropdownToggle>
                 <DropdownMenu>
-                  <Link to="/WashAndFold" className="s">
+                  <Link to="/SoftClean" className="s">
                     <DropdownItem className="sd">Wash & Fold</DropdownItem>
                   </Link>
-                  <Link to="/IronAndFold" className="s">
+                  <Link to="/Unyellowing" className="s">
                     <DropdownItem className="sd">Iron & Fold</DropdownItem>
                   </Link>
                   <Link to="/DryCleaning" className="s">
@@ -463,7 +463,7 @@ const DryCleaning = () => {
                       Emergency Service
                     </DropdownItem>
                   </Link>
-                  <Link to="/WashAndIron" className="s">
+                  <Link to="/DeepClean" className="s">
                     <DropdownItem className="sd">Wash and Iron</DropdownItem>
                   </Link>
                 </DropdownMenu>

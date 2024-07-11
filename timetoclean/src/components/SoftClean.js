@@ -26,80 +26,86 @@ import manDress from "../images/man.png";
 import womanDress from "../images/woman.png";
 
 import "./Services.css";
-
+import Cart from "./Cart";
 import { useCart } from "react-use-cart";
 import Swal from "sweetalert2";
-import Cart from "./Cart";
-const WashAndIronMan = [
+
+const WashAndFoldMan = [
   {
-    id: "1101",
+    id: "2101",
     ac: "d-block",
     dc: "d-none",
     name: "Kanvas",
+    service: "Soft Clean",
     category: "Sepatu Pria",
-    service: "Deep Clean",
-    price: 40000,
+    price: 35000,
     quantity: 1,
   },
+
   {
-    id: "1102",
+    id: "2102",
     ac: "d-block",
     dc: "d-none",
     name: "Kulit",
+    service: "Soft Clean",
     category: "Sepatu Pria",
-    service: "Deep Clean",
-    price: 40000,
+    price: 35000,
     quantity: 1,
   },
+
   {
-    id: "1103",
+    id: "2103",
     ac: "d-block",
     dc: "d-none",
     name: "Suede",
     category: "Sepatu Pria",
-    service: "Deep Clean",
-    price: 40000,
+    service: "Soft Clean",
+    price: 35000,
     quantity: 1,
   },
+
 ];
 
-const washAndIronWoman = [
+const WashAndFoldWoman = [
   {
-    id: "1201",
+    id: "2201",
     ac: "d-block",
     dc: "d-none",
     name: "Kanvas",
     category: "Sepatu Wanita",
-    service: "Deep Clean",
-    price: 35000,
+    service: "Soft Clean",
+    price: 30000,
     quantity: 1,
   },
+
   {
-    id: "1202",
+    id: "2202",
     ac: "d-block",
     dc: "d-none",
     name: "Kulit",
     category: "Sepatu Wanita",
-    service: "Deep Clean",
-    price: 35000,
+    service: "Soft Clean",
+    price: 30000,
     quantity: 1,
   },
+
   {
-    id: "1203",
+    id: "2203",
     ac: "d-block",
     dc: "d-none",
     name: "Suede",
     category: "Sepatu Wanita",
-    service: "Deep Clean",
-    price: 35000,
+    service: "Soft Clean",
+    price: 30000,
     quantity: 1,
   },
+
 ];
 
-const washAndIronHouse = [
+const WashAndFoldHouse = [
+  
 ];
-
-const WashAndIron = () => {
+const SoftClean = () => {
   // ADD-TO-CART
   const { addItem } = useCart();
   const addItemHandlar = (item, id) => {
@@ -115,11 +121,11 @@ const WashAndIron = () => {
 
   return (
     <>
-      <section id="WashAndIron" className="py-5">
+      <section id="WashAndFold" className="py-5">
         <Container>
           <div className="row justify-content-between py-3">
             <div className="col-md-8">
-              <h2 className="text-title">Deep Clean Service</h2>
+              <h2 className="text-title">Soft Clean Service</h2>
             </div>
             <div className="col-md-4">
               <span className="mr-3">Want to go another service?</span>
@@ -135,13 +141,13 @@ const WashAndIron = () => {
                   Select Service
                 </DropdownToggle>
                 <DropdownMenu>
-                <Link to="/WashAndIron" className="s">
+                <Link to="/DeepClean" className="s">
                     <DropdownItem className="sd">Deep Clean</DropdownItem>
                   </Link>
-                  <Link to="/WashAndFold" className="s">
+                  <Link to="/SoftClean" className="s">
                     <DropdownItem className="sd">Soft Clean</DropdownItem>
                   </Link>
-                  <Link to="/IronAndFold" className="s">
+                  <Link to="/Unyellowing" className="s">
                     <DropdownItem className="sd">Unyellowing</DropdownItem>
                   </Link>
                 </DropdownMenu>
@@ -162,7 +168,7 @@ const WashAndIron = () => {
                   </AccordionSummary>
                   <AccordionDetails>
                     <List component="nav" aria-label="mailbox folders">
-                      {WashAndIronMan.map((item) => (
+                      {WashAndFoldMan.map((item) => (
                         <div key={item.id}>
                           <Divider className="mb-3" />
                           <ListItem>
@@ -219,7 +225,7 @@ const WashAndIron = () => {
                   </AccordionSummary>
                   <AccordionDetails>
                     <List component="nav" aria-label="mailbox folders">
-                      {washAndIronWoman.map((item) => (
+                      {WashAndFoldWoman.map((item) => (
                         <div key={item.id}>
                           <Divider className="mb-3" />
                           <ListItem>
@@ -267,7 +273,6 @@ const WashAndIron = () => {
                 </Accordion>
               </div>
             </Col>
-
             <Col md={5}>
               <Cart />
             </Col>
@@ -278,4 +283,4 @@ const WashAndIron = () => {
   );
 };
 
-export default WashAndIron;
+export default SoftClean;

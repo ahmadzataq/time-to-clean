@@ -26,40 +26,80 @@ import manDress from "../images/man.png";
 import womanDress from "../images/woman.png";
 
 import "./Services.css";
+
 import { useCart } from "react-use-cart";
 import Swal from "sweetalert2";
 import Cart from "./Cart";
-
-const IronAndFoldMan = [
+const WashAndIronMan = [
   {
-    id: "3101",
+    id: "1101",
     ac: "d-block",
     dc: "d-none",
-    name: "Outsole Berwarna Putih",
+    name: "Kanvas",
     category: "Sepatu Pria",
-    service: "Unyellowing",
-    price: 55000,
+    service: "Deep Clean",
+    price: 40000,
     quantity: 1,
   },
-];
-
-const IronAndFoldWoman = [
   {
-    id: "3201",
+    id: "1102",
     ac: "d-block",
     dc: "d-none",
-    name: "Outsole Berwarna Putih",
-    category: "Sepatu Wanita",
-    service: "Unyellowing",
-    price: 50000,
+    name: "Kulit",
+    category: "Sepatu Pria",
+    service: "Deep Clean",
+    price: 40000,
     quantity: 1,
   },
-
+  {
+    id: "1103",
+    ac: "d-block",
+    dc: "d-none",
+    name: "Suede",
+    category: "Sepatu Pria",
+    service: "Deep Clean",
+    price: 40000,
+    quantity: 1,
+  },
 ];
 
-const IronAndFoldHouse = [
+const washAndIronWoman = [
+  {
+    id: "1201",
+    ac: "d-block",
+    dc: "d-none",
+    name: "Kanvas",
+    category: "Sepatu Wanita",
+    service: "Deep Clean",
+    price: 35000,
+    quantity: 1,
+  },
+  {
+    id: "1202",
+    ac: "d-block",
+    dc: "d-none",
+    name: "Kulit",
+    category: "Sepatu Wanita",
+    service: "Deep Clean",
+    price: 35000,
+    quantity: 1,
+  },
+  {
+    id: "1203",
+    ac: "d-block",
+    dc: "d-none",
+    name: "Suede",
+    category: "Sepatu Wanita",
+    service: "Deep Clean",
+    price: 35000,
+    quantity: 1,
+  },
 ];
-const IronAndFold = () => {
+
+const washAndIronHouse = [
+];
+
+const DeepClean = () => {
   // ADD-TO-CART
   const { addItem } = useCart();
   const addItemHandlar = (item, id) => {
@@ -75,11 +115,11 @@ const IronAndFold = () => {
 
   return (
     <>
-      <section id="IronAndFold" className="py-5">
+      <section id="WashAndIron" className="py-5">
         <Container>
           <div className="row justify-content-between py-3">
             <div className="col-md-8">
-              <h2 className="text-title">Unyellowing</h2>
+              <h2 className="text-title">Deep Clean Service</h2>
             </div>
             <div className="col-md-4">
               <span className="mr-3">Want to go another service?</span>
@@ -95,15 +135,15 @@ const IronAndFold = () => {
                   Select Service
                 </DropdownToggle>
                 <DropdownMenu>
-                  <Link to="/WashAndIron" className="s">
+                <Link to="/DeepClean" className="s">
                     <DropdownItem className="sd">Deep Clean</DropdownItem>
                   </Link>
-                  <Link to="/WashAndFold" className="s">
+                  <Link to="/SoftClean" className="s">
                     <DropdownItem className="sd">Soft Clean</DropdownItem>
                   </Link>
-                  <Link to="/IronAndFold" className="s">
+                  <Link to="/Unyellowing" className="s">
                     <DropdownItem className="sd">Unyellowing</DropdownItem>
-                  </Link>                                   
+                  </Link>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -122,7 +162,7 @@ const IronAndFold = () => {
                   </AccordionSummary>
                   <AccordionDetails>
                     <List component="nav" aria-label="mailbox folders">
-                      {IronAndFoldMan.map((item) => (
+                      {WashAndIronMan.map((item) => (
                         <div key={item.id}>
                           <Divider className="mb-3" />
                           <ListItem>
@@ -179,7 +219,7 @@ const IronAndFold = () => {
                   </AccordionSummary>
                   <AccordionDetails>
                     <List component="nav" aria-label="mailbox folders">
-                      {IronAndFoldWoman.map((item) => (
+                      {washAndIronWoman.map((item) => (
                         <div key={item.id}>
                           <Divider className="mb-3" />
                           <ListItem>
@@ -238,4 +278,4 @@ const IronAndFold = () => {
   );
 };
 
-export default IronAndFold;
+export default DeepClean;

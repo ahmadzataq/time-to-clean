@@ -5,13 +5,13 @@ import DryCleaning from "./components/DryCleaning";
 import EmergencyService from "./components/EmergencyService";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import IronAndFold from "./components/IronAndFold";
+import Unyellowing from "./components/Unyellowing";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Order from "./components/Order";
 import Services from "./components/Services";
-import WashAndFold from "./components/WashAndFold";
-import WashAndIron from "./components/WashAndIron";
+import SoftClean from "./components/SoftClean";
+import DeepClean from "./components/DeepClean";
 import { CartProvider } from "react-use-cart";
 import Dashboard from "./components/UserDashboard/Dashboard";
 import Settings from "./components/UserDashboard/Settings";
@@ -38,9 +38,9 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/services" element={<Services />} />
             <Route exact path="/login" element={<Login />} />
-            <Route exact path="/WashAndIron" element={<WashAndIron />} />
-            <Route exact path="/WashAndFold" element={<WashAndFold />} />
-            <Route exact path="/IronAndFold" element={<IronAndFold />} />
+            <Route exact path="/DeepClean" element={<DeepClean />} />
+            <Route exact path="/SoftClean" element={<SoftClean />} />
+            <Route exact path="/Unyellowing" element={<Unyellowing />} />
             <Route exact path="/DryCleaning" element={<DryCleaning />} />
             <Route
               exact

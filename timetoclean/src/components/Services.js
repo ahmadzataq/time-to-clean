@@ -19,21 +19,21 @@ const services = [
     name: "Deep Clean",
     title:
       "Pembersihan mendalam pada seluruh bagian sepatu, termasuk bagian luar, dalam, dan sol.",
-    link: "/WashAndIron",
+    link: "/DeepClean",
   },
   {
     src: require("../images/wash-fold.jpg"),
     name: "Soft Clean",
     title:
       "Pembersihan yang lebih ringan dan tidak seintensif deep clean, ideal untuk sepatu yang tidak terlalu kotor.",
-    link: "/WashAndFold",
+    link: "/SoftClean",
   },
   {
     src: require("../images/iron-fold.jpg"),
     name: "Unyellowing",
     title:
       "Menghilangkan noda atau perubahan warna pada bagian outsole yang menguning.",
-    link: "/IronAndFold",
+    link: "/Unyellowing",
   }
 ];
 
