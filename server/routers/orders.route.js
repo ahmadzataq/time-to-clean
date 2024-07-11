@@ -12,7 +12,6 @@ router.post("/", async (req, res) => {
       totalItems: req.body.totalItems,
       picupTime: req.body.picupTime,
       total_quantity: req.body.total_quantity,
-      deliveryCost: req.body.deliveryCost,
       total_price: req.body.total_price,
       email: req.body.email,
       phone: req.body.phone,

@@ -123,8 +123,7 @@ const SingleOrder = () => {
               ))
             )}
             <tr>
-              <th colSpan="3">Total Items: {order.totalItems}</th>
-              <th>Delviery Cost: {order.deliveryCost}</th>
+              <th colSpan="4">Total Items: {order.totalItems}</th>
               <th>Total Qty: {order.total_quantity}</th>
               <th>Rp. {order.total_price}</th>
             </tr>

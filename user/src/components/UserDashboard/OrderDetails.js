@@ -137,12 +137,11 @@ const OrderDetails = () => {
     return (
       <Container>
         <div className="d-flex justify-content-center mb-4">
-          <h2 className="text-title head-title mt-5">Order Details</h2>
+          <h2 className="text-title head-title mt-5">Detail Pesanan</h2>
         </div>
         <Row>
           <Col md={12}>
             <div className="order">
-              <h3>Item yang dipesan</h3>
               <div className="order-items">
                 <table>
                   <tr>
@@ -175,12 +174,8 @@ const OrderDetails = () => {
                     <td colSpan="3">Total Items: {order.totalItems}</td>
                     <td colSpan="2">Total Qty: {order.total_quantity}</td>
                     <td>
-                      Sub-Total: Rp. {order.total_price - order.deliveryCost}
+                      Total: Rp. {order.total_price}
                     </td>
-                  </tr>
-                  <tr>
-                    <th colSpan="3">Delviery Cost: Rp. {order.deliveryCost}</th>
-                    <th colSpan="3">Total Cost: Rp. {order.total_price}</th>
                   </tr>
                 </table>
               </div>
@@ -193,7 +188,7 @@ const OrderDetails = () => {
             <Row>
               <Col md={6}>
                 <div className="order-summury">
-                  <h5>Order Status</h5>
+                  <h5>Status Pesanan</h5>
                   <ul>
                     <li>
                       <b>Status: </b>
@@ -210,10 +205,10 @@ const OrderDetails = () => {
                       </span>
                     </li>
                     <li>
-                      <b>Payment: </b> {order.payment + " "}
+                      <b>Pembayaran: </b> {order.payment + " "}
                     </li>
                     <li>
-                      <b>Order Date: </b>
+                      <b>Tanggal Pemesanan: </b>
                       {order.order_date
                         ? moment(order.order_date).format("lll")
                         : "NaN"}
@@ -222,13 +217,13 @@ const OrderDetails = () => {
                       <b>Tanggal Pengambilan: </b> {order.picupTime}
                     </li>
                     <li>
-                      <b>Accept Time: </b>
+                      <b>Tanggal Diterima: </b>
                       {order.accept_time
                         ? moment(order.accept_time).format("lll")
                         : "NaN"}
                     </li>
                     <li>
-                      <b>Expected Time: </b>
+                      <b>Tanggal Estimasi: </b>
                       {order.expTime === "0"
                         ? "NaN"
                         : moment(order.expTime).format("lll")}

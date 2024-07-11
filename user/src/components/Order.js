@@ -55,14 +55,6 @@ const Order = () => {
     pendingPayment = "No";
   }
 
-  var deliveryCost = 0;
-
-  if (cartTotal < 1000) {
-    deliveryCost = 40;
-  } else {
-    deliveryCost = 0;
-  }
-
   console.log(picupDate + "," + picupTime);
 
   const submitHandler = (e) => {
@@ -82,8 +74,7 @@ const Order = () => {
           pendingPayment,
           totalItems: totalUniqueItems,
           total_quantity: totalItems,
-          deliveryCost: deliveryCost,
-          total_price: cartTotal + deliveryCost,
+          total_price: cartTotal,
         };
         axios
           .post(`/api/admin/orders`, data, {

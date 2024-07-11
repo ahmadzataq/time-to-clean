@@ -60,8 +60,6 @@ const CartItems = () => {
           </div>
         </Link>
 
-        
-
         <Link to="/complete-orders">
           <div className="single-card">
             <div className="card-content">

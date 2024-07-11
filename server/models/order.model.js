@@ -43,9 +43,6 @@ const orderSchema = mongoose.Schema({
     type: Number,
     require: true,
   },
-  deliveryCost: {
-    type: Number,
-  },
   total_price: {
     type: Number,
     require: true,
