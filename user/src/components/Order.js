@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Col, Container, FormGroup, Input, Label, Row } from "reactstrap";
 import { useCart } from "react-use-cart";
@@ -35,6 +35,7 @@ const Order = () => {
     });
   };
 
+  
   // PLACE ORDER
   const customer_id = localStorage.getItem("cID");
   const customer_name = localStorage.getItem("cName");
@@ -43,12 +44,9 @@ const Order = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [branch, setBranch] = useState("");
-  const [toDoor, setToDoor] = useState("");
-  const [road, setRoad] = useState("");
-  const [flatName, setFlatName] = useState("");
   const [address, setAddress] = useState("");
   const [payment, setPayment] = useState("");
+
 
   var pendingPayment;
   if (payment === "Tunai") {
@@ -71,7 +69,7 @@ const Order = () => {
           email,
           phone,
           name,
-          address: toDoor + "," + road + "," + flatName + "," + address,
+          address: address,
           payment,
           pendingPayment,
           totalItems: totalUniqueItems,
@@ -201,43 +199,6 @@ const Order = () => {
                     placeholder="Nomor Telepon"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                  />
-                </FormGroup>
-
-                <div className="mt-4">
-                  <h5>Alamat</h5>
-                  {/* <span className="from-text">
-                    Expert will arrive at the address given below
-                  </span> */}
-                </div>
-
-                <FormGroup>
-                  <input
-                    name="toDoor"
-                    className="form-control my-3"
-                    placeholder="Keterangan Tambahan"
-                    value={toDoor}
-                    onChange={(e) => setToDoor(e.target.value)}
-                  />
-                </FormGroup>
-
-                <FormGroup>
-                  <input
-                    name="road"
-                    className="form-control my-3"
-                    placeholder="Nama Jalan"
-                    value={road}
-                    onChange={(e) => setRoad(e.target.value)}
-                  />
-                </FormGroup>
-
-                <FormGroup>
-                  <input
-                    name="flat"
-                    className="form-control my-3"
-                    placeholder="Nomor Rumah"
-                    value={flatName}
-                    onChange={(e) => setFlatName(e.target.value)}
                   />
                 </FormGroup>
 
