@@ -22,39 +22,39 @@ import {
 const details = [
   {
     src: <FontAwesomeIcon icon={faTruck} />,
-    name: "Free Pickup & Delivery ",
+    name: "Pengiriman Gratis ",
     title:
-      "Doorstep Pickup and Your clothes will be delivered at your doorstep on time and as fresh as daisy.",
+      "Gratis pengiriman hasil cuci sepatu untuk daerah Depok dan sekitarnya. ",
   },
   {
     src: <FontAwesomeIcon icon={faSoap} />,
-    name: "Hygienic",
+    name: "Higienis",
     title:
-      "Your clothes are hygienically washed so they are germ free and clean. The way you think about laundry!",
+      "Sepatu dicuci secara higienis sehingga bebas kuman, bersih dan wangi.",
   },
   {
     src: <FontAwesomeIcon icon={faLiraSign} />,
-    name: "Affordable",
+    name: "Terjangkau",
     title:
-      "No Additional Cost! You pay just as same as the price set by your selected laundry vendor.",
+      "Tanpa Biaya Tambahan, cukup membayar sama dengan harga yang ditetapkan oleh Time To Clean.",
   },
   {
     src: <FontAwesomeIcon icon={faLeaf} />,
-    name: "Eco Friendly",
+    name: "Ramah Lingkungan",
     title:
-      "Local residents love on our reliable laundry & dry cleaning detailss for the fast, accurate, top quality results.",
+      "Detail pencucian sepatu kami yang andal untuk hasil yang cepat, akurat, dan berkualitas tinggi.",
   },
   {
     src: <FontAwesomeIcon icon={faMedal} />,
-    name: "Quality Guarantee",
+    name: "Jaminan Kualitas",
     title:
-      "We are professionals in the laundry business, which means we always up to date on the latest technologies.",
+      "Profesional dalam bisnis jasa cuci sepatu, kami selalu mengikuti perkembangan teknologi terkini.",
   },
   {
     src: <FontAwesomeIcon icon={faMoneyBillAlt} />,
-    name: "Transparent Pricing",
+    name: "Transparansi Harga",
     title:
-      "In Affordable price our details in the same budget or less than any other local laundry details near you.",
+      "Penyajian biaya secara jelas tanpa ada biaya tersembunyi, memastikan transparansi dan kejelasan bagi pelanggan.",
   },
 ];
 

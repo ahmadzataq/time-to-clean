@@ -9,64 +9,26 @@ const Footer = () => {
       <Container>
         <Row className="py-3">
           <Col md={6} className="py-3">
-            <h4 className="text-title">TimeToClean Online Laundry Service</h4>
+            <h4 className="text-title">Time To Clean Online Shoe Laundry Service</h4>
             <p className="text-white">Email: zahidtaqiyuddinahmad@gmail.com</p>
-            <p className="text-white">Phone: 0815-8459-4961</p>
+            <p className="text-white">Phone: 081584594961 (whatsapp)</p>
           </Col>
           <Col md={3} className="py-3">
-            <h5>Quich Links</h5>
+            <h5>Quick Links</h5>
             <ul className="list-unstyled">
               <li className="py-2">
-                <Link>Get Help</Link>
-              </li>
-              <li className="py-2">
-                <Link>Privacy Policy</Link>
-              </li>
-              <li className="py-2">
-                <Link>Cookie Policy</Link>
-              </li>
-              <li className="py-2">
-                <Link>About Us</Link>
-              </li>
-              <li className="py-2">
-                <Link>Contact Us</Link>
+                <Link></Link>
+                <a href="https://wa.link/l4f4vv">Contact Us</a>
               </li>
             </ul>
           </Col>
           <Col md={3} className="py-3">
             <h5>Follow Us On</h5>
-            <ul className="list-unstyled social-icons">
-              <li className="mx-2 ">
-                <a href="/">
-                  {" "}
-                  <i className="fab fa-facebook face"></i>
-                </a>
-              </li>
+            <ul className="list-unstyled social-icons">              
               <li className="mx-2">
-                {" "}
-                <a href="/">
-                  <i className="fab fa-youtube you"></i>
-                </a>
-              </li>
-              <li className="mx-2">
-                <a href="/">
+                <a href="https://www.instagram.com/timetocleannn">
                   <i className="fab fa-instagram insta"></i>
                 </a>
-              </li>
-            </ul>
-            <h5>Login</h5>
-            <ul className="list-unstyled">
-              <li className="py-2">
-                <a
-                  href="http://localhost:2000/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Admin Login
-                </a>
-              </li>
-              <li className="py-2">
-                <a href="/delivery-login">Delivery Login</a>
               </li>
             </ul>
           </Col>
@@ -75,11 +37,11 @@ const Footer = () => {
           <p className="text-secondary">
             Copyright &copy;Developed by{" "}
             <a
-              href="https://www.linkedin.com/in/ismailcse/"
+              href="https://www.linkedin.com/in/ahmadzahidtaq/"
               target="_blank"
               rel="noreferrer"
             >
-              ISMAIL
+              Ahmad Zahid
             </a>
           </p>
         </div>

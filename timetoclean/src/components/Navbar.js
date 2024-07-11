@@ -74,15 +74,7 @@ export default function Navbar() {
                     </span>{" "}
                     Order
                   </NavLink>
-                </li>
-                <li className="nav-item text-center text-md-left mx-2 ">
-                  <NavLink className="nav-link " to="/map">
-                    <span>
-                      <i className="fa-solid fa-location-dot"></i>
-                    </span>{" "}
-                    Maps
-                  </NavLink>
-                </li>
+                </li>                
                 {!customer ? (
                   <li className="nav-item  text-center text-md-left mx-2">
                     <NavLink className="nav-link " to="/login">
