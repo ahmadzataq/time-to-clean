@@ -13,9 +13,6 @@ import User from "../user/User";
 import Login from "../login/Login";
 import SingleOrder from "../order/SingleOrder";
 import SingleCustomer from "../customer/SingleCustomer";
-import DeliveryMen from "../deliverymen/DeliveryMen";
-import SingleDeliveryMen from "../deliverymen/SingleDeliveryMen";
-import NewMan from "../deliverymen/NewMan";
 import CompleteOrders from "../order/CompleteOrders";
 import PendingOrders from "../order/PendingOrders";
 
@@ -38,9 +35,6 @@ const Router = () => {
         <Route path="/change-profile-pic" element={<ChangeProfilePic />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/delivery-men" element={<DeliveryMen />} />
-        <Route path="/new-man" element={<NewMan />} />
-        <Route path="/delivery-men/:id" element={<SingleDeliveryMen />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
