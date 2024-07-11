@@ -166,62 +166,52 @@ const SingleOrder = () => {
         <form onSubmit={submitHandler}>
           <div className="order-summury grid-3">
             <div>
-              <h5>Delivery Details</h5>
+              <h5>Detail Pelanggan</h5>
               <ul>
                 <li>
-                  <b>Name</b> :{" "}
+                  <b>Nama</b> :{" "}
                   <Link to={"/customers/" + order.customer_id}>
                     {order.customer_name}
                   </Link>
                 </li>
                 <li>
-                  <b>Phone</b> : {order.phone}
+                  <b>Telepon</b> : {order.phone}
                 </li>
                 <li>
                   <b>Email</b> : {order.email}
                 </li>
                 <li>
-                  <b>Address</b> : {order.address}
+                  <b>Alamat</b> : {order.address}
                 </li>
               </ul>
             </div>
             <div>
-              <h5>Order Status</h5>
+              <h5>Status Pesanan</h5>
               <ul>
                 <li>
                   <b>Status</b> :{" "}
                   <span className="btn-small">{order.status}</span>
                 </li>
                 <li>
-                  <b>Payment: </b> {order.payment + " "}
+                  <b>Pembayaran: </b> {order.payment + " "}
                 </li>
                 
                 <li>
-                  <b>Order Date</b> : {moment(order.date).format("lll")}
+                  <b>Tanggal Pesanan</b> : {moment(order.date).format("lll")}
                 </li>
                 <li>
-                  <b>Expected Time</b> :{" "}
+                  <b>Tanggal Estimasi</b> :{" "}
                   {order.expTime === "0"
                     ? "NaN"
                     : moment(order.expTime).format("lll")}
                 </li>
-                <li>
-                  <b>Delivery Man</b> :{" "}
-                  {order.delivery_man_name === "NaN" ? (
-                    "NaN"
-                  ) : (
-                    <Link to={"/delivery-men/" + order.delivery_man_id}>
-                      {order.delivery_man_name}
-                    </Link>
-                  )}
-                </li>
               </ul>
             </div>
             <div>
-              <h5>Order Action</h5>
+              <h5>Action</h5>
               <ul>
                 <li>
-                  <b>Expected Time</b> :{" "}
+                  <b>Tanggal Estimasi</b> :{" "}
                   <input
                     type="date"
                     value={expDate}
@@ -236,7 +226,7 @@ const SingleOrder = () => {
                   />
                 </li>
                 <li>
-                  <b>Order Status</b> :{" "}
+                  <b>Status Pesanan</b> :{" "}
                   <select
                     name="status"
                     onChange={(e) => setStatus(e.target.value)}
@@ -247,31 +237,31 @@ const SingleOrder = () => {
                       value="Ordered"
                       selected={order.status === "Ordered"}
                     >
-                      Ordered
+                      Dipesan
                     </option>
                     <option
                       value="Accepted"
                       selected={order.status === "Accepted"}
                     >
-                      Accept
+                      Diterima
                     </option>
                     <option
                       value="On_service"
                       selected={order.status === "On_service"}
                     >
-                      On Service
+                      Diproses
                     </option>
                     <option
                       value="Delivered"
                       selected={order.status === "Delivered"}
                     >
-                      Delivered
+                      Selesai
                     </option>
                     <option
                       value="Cancelled"
                       selected={order.status === "Cancelled"}
                     >
-                      Cancelled
+                      Batal
                     </option>
                   </select>
                 </li>

@@ -49,7 +49,7 @@ const Order = () => {
   const [payment, setPayment] = useState("");
 
   var pendingPayment;
-  if (payment === "Cash") {
+  if (payment === "Tunai") {
     pendingPayment = "Yes";
   } else {
     pendingPayment = "No";
@@ -273,7 +273,7 @@ const Order = () => {
                       id="inlineRadio1"
                       name="payment"
                       type="radio"
-                      value="Cash"
+                      value="Tunai"
                       onChange={(e) => setPayment(e.target.value)}
                       required
                     />

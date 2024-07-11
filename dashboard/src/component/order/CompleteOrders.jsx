@@ -27,15 +27,15 @@ const CompleteOrders = () => {
         <div className="order-items">
           <table>
             <tr>
-              <th>Customer</th>
-              <th>Order_id</th>
-              <th>Items</th>
+              <th>Pelanggan</th>
+              <th>Id</th>
+              <th>Item</th>
               <th>Qty</th>
-              <th>Total_price</th>
-              <th>Payment</th>
+              <th>Jumlah Harga</th>
+              <th>Pembayaran</th>
               <th>Status</th>
-              <th>Order_date</th>
-              <th>Exp_Time</th>
+              <th>Tanggal Pemesanan</th>
+              <th>Tanggal Estimasi</th>
             </tr>
             {orders.length === 0 ? (
               <tr>

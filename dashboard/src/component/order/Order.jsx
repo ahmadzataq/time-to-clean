@@ -56,21 +56,21 @@ const Order = () => {
         <div className="order-items">
           <table>
             <tr>
-              <th>Customer</th>
+              <th>Pelanggan</th>
               <th>ID</th>
-              <th>Items</th>
+              <th>Item</th>
               <th>Qty</th>
-              <th>Total_price</th>
-              <th>Payment</th>
+              <th>Jumlah Harga</th>
+              <th>Pembayaran</th>
               <th>Status</th>
-              <th>Order_date</th>
-              <th>Exp_time</th>
-              <th>Action</th>
+              <th>Tanggal Pemesanan</th>
+              <th>Tanggal Estimasi</th>
+              <th>Aksi</th>
             </tr>
             {orders.length === 0 ? (
               <tr>
                 <td className="text-center" colSpan="13">
-                  No items found!
+                  Kosong!
                 </td>
               </tr>
             ) : (
