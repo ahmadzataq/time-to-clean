@@ -76,7 +76,7 @@ const User = () => {
             {users.length === 0 ? (
               <tr>
                 <td className="text-center" colSpan="8">
-                  No items found!
+                Kosong!
                 </td>
               </tr>
             ) : (

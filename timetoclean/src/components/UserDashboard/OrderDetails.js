@@ -79,7 +79,7 @@ const OrderDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         let updateData = {
-          status: "Delivered",
+          status: "Selesai",
         };
         axios
           .put(`/api/admin/orders/${id}`, updateData, {
@@ -90,7 +90,7 @@ const OrderDetails = () => {
           .then((response) => {
             Swal.fire({
               icon: "success",
-              text: "Order Accepted.",
+              text: "Pesanan Diterima.",
               showConfirmButton: false,
               timer: 1000,
             });
@@ -156,21 +156,21 @@ const OrderDetails = () => {
         <Row>
           <Col md={12}>
             <div className="order">
-              <h3>Ordered Items</h3>
+              <h3>Item yang dipesan</h3>
               <div className="order-items">
                 <table>
                   <tr>
-                    <th>Name</th>
-                    <th>Service</th>
-                    <th>Category</th>
-                    <th>Price</th>
+                    <th>Nama</th>
+                    <th>Layanan</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
                     <th>Qty</th>
-                    <th>Total_price</th>
+                    <th>Total Harga</th>
                   </tr>
                   {items.length === 0 ? (
                     <tr>
                       <td className="text-center" colSpan="13">
-                        No items found!
+                      Kosong!
                       </td>
                     </tr>
                   ) : (
@@ -213,11 +213,11 @@ const OrderDetails = () => {
                       <b>Status: </b>
                       <span
                         className={
-                          (order.status === "Ordered" && "btn-order") ||
-                          (order.status === "Accepted" && "btn-on-delv") ||
-                          (order.status === "On_service" && "btn-on-delv") ||
-                          (order.status === "Cancelled" && "btn-cncl") ||
-                          (order.status === "Delivered" && "btn-delv")
+                          (order.status === "Dipesan" && "btn-order") ||
+                          (order.status === "Diterima" && "btn-on-delv") ||
+                          (order.status === "Diproses" && "btn-on-delv") ||
+                          (order.status === "Batal" && "btn-cncl") ||
+                          (order.status === "Selesai" && "btn-delv")
                         }
                       >
                         {order.status}
@@ -249,9 +249,9 @@ const OrderDetails = () => {
                     </li>
                   </ul>
                   {(order.pendingPayment !== "Paid" &&
-                    order.status === "On_service") ||
-                  order.status === "Accepted" ||
-                  order.status === "Delivered" ? (
+                    order.status === "Diproses") ||
+                  order.status === "Diterima" ||
+                  order.status === "Selesai" ? (
                     <Link className="btn-small disableLink">ACCEPT</Link>
                   ) : (
                     <Link onClick={() => acceptHandler()} className="btn-small">
@@ -259,7 +259,7 @@ const OrderDetails = () => {
                     </Link>
                   )}{" "}
                   {order.pendingPayment === "Yes" &&
-                    order.status === "On_service" && (
+                    order.status === "Diproses" && (
                       <Link
                         onClick={() => paymentHandler()}
                         className="btn-small"
@@ -267,7 +267,7 @@ const OrderDetails = () => {
                         Bill Pay
                       </Link>
                     )}{" "}
-                  {order.status === "Ordered" ? (
+                  {order.status === "Dipesan" ? (
                     <Link onClick={() => deleteHandler()} className="btn-small">
                       CANCEL
                     </Link>

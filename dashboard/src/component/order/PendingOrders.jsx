@@ -13,7 +13,7 @@ const PendingOrders = () => {
       const { data } = await axios.get("/api/admin/orders"
       );
       const completeOrder = data.filter((curData) => {
-        return curData.status.toLowerCase() !== "delivered";
+        return curData.status.toLowerCase() !== "Selesai";
       });
       setOrders(completeOrder);
     };

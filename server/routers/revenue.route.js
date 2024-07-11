@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       ,
       {
         $group: {
-          _id: { $eq: ["$status", "Delivered"] },
+          _id: { $eq: ["$status", "Selesai"] },
           revenue: { $sum: "$total_price" },
         },
       },

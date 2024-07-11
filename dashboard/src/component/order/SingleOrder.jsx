@@ -130,17 +130,17 @@ const SingleOrder = () => {
         <div className="order-items">
           <table>
             <tr>
-              <th>Name</th>
-              <th>Service</th>
-              <th>Category</th>
-              <th>Price</th>
+              <th>Nama</th>
+              <th>Layanan</th>
+              <th>Kategori</th>
+              <th>Harga</th>
               <th>Qty</th>
-              <th>Total_price</th>
+              <th>Total Harga</th>
             </tr>
             {items.length === 0 ? (
               <tr>
                 <td className="text-center" colSpan="13">
-                  No items found!
+                Kosong!
                 </td>
               </tr>
             ) : (
@@ -234,32 +234,32 @@ const SingleOrder = () => {
                     className="form-control"
                   >
                     <option
-                      value="Ordered"
-                      selected={order.status === "Ordered"}
+                      value="Dipesan"
+                      selected={order.status === "Dipesan"}
                     >
                       Dipesan
                     </option>
                     <option
-                      value="Accepted"
-                      selected={order.status === "Accepted"}
+                      value="Diterima"
+                      selected={order.status === "Diterima"}
                     >
                       Diterima
                     </option>
                     <option
-                      value="On_service"
-                      selected={order.status === "On_service"}
+                      value="Diproses"
+                      selected={order.status === "Diproses"}
                     >
                       Diproses
                     </option>
                     <option
-                      value="Delivered"
-                      selected={order.status === "Delivered"}
+                      value="Selesai"
+                      selected={order.status === "Selesai"}
                     >
                       Selesai
                     </option>
                     <option
-                      value="Cancelled"
-                      selected={order.status === "Cancelled"}
+                      value="Batal"
+                      selected={order.status === "Batal"}
                     >
                       Batal
                     </option>

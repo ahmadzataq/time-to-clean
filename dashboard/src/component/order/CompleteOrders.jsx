@@ -13,7 +13,7 @@ const CompleteOrders = () => {
       const { data } = await axios.get("/api/admin/orders"
       );
       const completeOrder = data.filter((curData) => {
-        return curData.status.toLowerCase() === "delivered";
+        return curData.status.toLowerCase() === "Selesai";
       });
       setOrders(completeOrder);
     };
@@ -40,7 +40,7 @@ const CompleteOrders = () => {
             {orders.length === 0 ? (
               <tr>
                 <td className="text-center" colSpan="13">
-                  No items found!
+                Kosong!
                 </td>
               </tr>
             ) : (

@@ -59,7 +59,7 @@ const Customer = () => {
             {customers.length === 0 ? (
               <tr>
                 <td className="text-center" colSpan="9">
-                  No items found!
+                Kosong!
                 </td>
               </tr>
             ) : (

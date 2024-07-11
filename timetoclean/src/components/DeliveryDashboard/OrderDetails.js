@@ -48,7 +48,7 @@ const OrderDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         let updateData = {
-          status: "On_service",
+          status: "Diproses",
         };
         axios
           .put(`/api/admin/orders/${id}`, updateData, {
@@ -120,26 +120,26 @@ const OrderDetails = () => {
     return (
       <Container>
         <div className="d-flex justify-content-center mb-4">
-          <h2 className="text-title head-title mt-5">Order Details</h2>
+          <h2 className="text-title head-title mt-5">Detail Pesanan</h2>
         </div>
         <Row>
           <Col md={12}>
             <div className="order">
-              <h3>Ordered Items</h3>
+              <h3>Item yang dipesan</h3>
               <div className="order-items">
                 <table>
                   <tr>
-                    <th>Name</th>
-                    <th>Service</th>
-                    <th>Category</th>
-                    <th>Price</th>
+                    <th>Nama</th>
+                    <th>Layanan</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
                     <th>Qty</th>
-                    <th>Total_price</th>
+                    <th>Total Harga</th>
                   </tr>
                   {items.length === 0 ? (
                     <tr>
                       <td className="text-center" colSpan="13">
-                        No items found!
+                      Kosong!
                       </td>
                     </tr>
                   ) : (
@@ -182,11 +182,11 @@ const OrderDetails = () => {
                       <b>Status: </b>
                       <span
                         className={
-                          (order.status === "Ordered" && "btn-order") ||
-                          (order.status === "Accepted" && "btn-on-delv") ||
-                          (order.status === "On_service" && "btn-on-delv") ||
-                          (order.status === "Cancelled" && "btn-cncl") ||
-                          (order.status === "Delivered" && "btn-delv")
+                          (order.status === "Dipesan" && "btn-order") ||
+                          (order.status === "Diterima" && "btn-on-delv") ||
+                          (order.status === "Diproses" && "btn-on-delv") ||
+                          (order.status === "Batal" && "btn-cncl") ||
+                          (order.status === "Selesai" && "btn-delv")
                         }
                       >
                         {order.status}
@@ -205,7 +205,7 @@ const OrderDetails = () => {
                       <b>Tanggal Pengambilan: </b> {order.picupTime}
                     </li>
                     <li>
-                      <b>Accepted Time: </b>
+                      <b>Waktu Diterima: </b>
                       {order.accept_time
                         ? moment(order.accept_time).format("lll")
                         : "NaN"}
@@ -218,10 +218,10 @@ const OrderDetails = () => {
                     </li>
                   </ul>
                   {!order.status ||
-                  order.status === "Ordered" ||
-                  order.status === "On_service" ||
-                  order.status === "Delivered" ||
-                  order.status === "Cancelled" ? (
+                  order.status === "Dipesan" ||
+                  order.status === "Diproses" ||
+                  order.status === "Selesai" ||
+                  order.status === "Batal" ? (
                     <Link className="btn-small disableLink">PicUp</Link>
                   ) : (
                     <Link onClick={() => acceptHandler()} className="btn-small">
@@ -229,7 +229,7 @@ const OrderDetails = () => {
                     </Link>
                   )}{" "}
                   {order.pendingPayment === "Sent" &&
-                    order.status === "On_service" && (
+                    order.status === "Diproses" && (
                       <Link
                         onClick={() => paymentHandler()}
                         className="btn-small"

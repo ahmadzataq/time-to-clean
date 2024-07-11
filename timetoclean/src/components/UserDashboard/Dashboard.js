@@ -67,7 +67,7 @@ const Dashboard = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         let updateData = {
-          status: "Delivered",
+          status: "Selesai",
         };
         axios
           .put(`/api/admin/orders/${id}`, updateData, {
@@ -78,7 +78,7 @@ const Dashboard = () => {
           .then((response) => {
             Swal.fire({
               icon: "success",
-              text: "Order Accepted.",
+              text: "Pesanan Diterima.",
               showConfirmButton: false,
               timer: 1000,
             });
@@ -108,25 +108,25 @@ const Dashboard = () => {
           </Col>
           <Col md={8}>
             <div className="order">
-              <h3>Order Table</h3>
+              <h3>Tabel Pemesanan</h3>
               <div className="order-items">
                 <table>
                   <tr>
-                    <th>ID</th>
+                    <th>Id</th>
                     <th>Item</th>
                     <th>Qty</th>
-                    <th>Total_price</th>
-                    <th>Payment</th>
+                    <th>Total Harga</th>
+                    <th>Pembayaran</th>
                     <th>Status</th>
-                    <th>Order_Date</th>
-                    <th>Accept_Time</th>
-                    <th>Expected_Time</th>
+                    <th>Tanggal Pemesanan</th>
+                    <th>Tanggal Diterima</th>
+                    <th>Tanggal Estimasi</th>
                     <th>Action</th>
                   </tr>
                   {orders.length === 0 ? (
                     <tr>
                       <td className="text-center" colSpan="10">
-                        No items found!
+                        Kosong!
                       </td>
                     </tr>
                   ) : (
@@ -144,11 +144,11 @@ const Dashboard = () => {
                         <td>
                           <span
                             className={
-                              (item.status === "Ordered" && "btn-order") ||
-                              (item.status === "Accepted" && "btn-on-delv") ||
-                              (item.status === "On_service" && "btn-on-delv") ||
-                              (item.status === "Cancelled" && "btn-cncl") ||
-                              (item.status === "Delivered" && "btn-delv")
+                              (item.status === "Dipesan" && "btn-order") ||
+                              (item.status === "Diterima" && "btn-on-delv") ||
+                              (item.status === "Diproses" && "btn-on-delv") ||
+                              (item.status === "Batal" && "btn-cncl") ||
+                              (item.status === "Selesai" && "btn-delv")
                             }
                           >
                             {item.status}
@@ -166,7 +166,7 @@ const Dashboard = () => {
                             : moment(item.expTime).format("lll")}
                         </td>
                         <td>
-                          {(item.status === "On_service" ||
+                          {(item.status === "Diproses" ||
                             item.status === "Pickup") && (
                             <Link
                               className="btn-small"
@@ -175,14 +175,14 @@ const Dashboard = () => {
                               ACCEPT
                             </Link>
                           )}
-                          {(item.status === "Delivered" ||
-                            item.status === "Cancelled" ||
-                            item.status === "Accepted") && (
+                          {(item.status === "Selesai" ||
+                            item.status === "Batal" ||
+                            item.status === "Diterima") && (
                             <Link className="btn-small disableLink">
                               ACCEPT
                             </Link>
                           )}
-                          {item.status === "Ordered" && (
+                          {item.status === "Dipesan" && (
                             <Link
                               onClick={() => deleteHandler(item._id)}
                               className="btn-small danger-btn"

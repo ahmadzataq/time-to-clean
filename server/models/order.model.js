@@ -56,7 +56,7 @@ const orderSchema = mongoose.Schema({
   },
   status: {
     type: String,
-    default: "Ordered",
+    default: "Dipesan",
   },
   picupTime: {
     type: String,

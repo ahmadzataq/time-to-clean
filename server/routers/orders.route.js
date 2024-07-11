@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
       pendingPayment: req.body.pendingPayment,
     });
     await newOrder.save().then((data) => {
-      res.send("Successfully ordered.");
+      res.send("Berhasil Dipesan.");
     });
   } catch (error) {
     res.send({

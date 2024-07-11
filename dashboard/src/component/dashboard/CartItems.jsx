@@ -11,10 +11,10 @@ const CartItems = () => {
     const fatchOrders = async () => {
       const { data } = await axios.get("/api/admin/orders");
       const pendingOrder = data.filter((curData) => {
-        return curData.status.toLowerCase() !== "delivered";
+        return curData.status.toLowerCase() !== "Selesai";
       });
       const completeOrder = data.filter((curData) => {
-        return curData.status.toLowerCase() === "delivered";
+        return curData.status.toLowerCase() === "Selesai";
       });
       setPendingOrders(pendingOrder);
       setCompleteOrders(completeOrder);

@@ -114,7 +114,7 @@ const SingleCustomer = () => {
               {orders.length === 0 ? (
                 <tr>
                   <td className="text-center" colSpan="10">
-                    No items found!
+                  Kosong!
                   </td>
                 </tr>
               ) : (

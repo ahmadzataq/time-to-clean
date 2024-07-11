@@ -65,7 +65,7 @@ const Order = () => {
               <th>Status</th>
               <th>Tanggal Pemesanan</th>
               <th>Tanggal Estimasi</th>
-              <th>Aksi</th>
+              <th>Action</th>
             </tr>
             {orders.length === 0 ? (
               <tr>
@@ -77,7 +77,7 @@ const Order = () => {
               orders.map((item) => (
                 <tr
                   className={
-                    (item.status === "Ordered" && "text-bold") ||
+                    (item.status === "Dipesan" && "text-bold") ||
                     (item.status === "OnDelivery" && "text-bold") ||
                     (item.status === "Accept" && "text-bold")
                   }
@@ -99,11 +99,11 @@ const Order = () => {
                   <td>
                     <span
                       className={
-                        (item.status === "Ordered" && "btn-order") ||
-                        (item.status === "Accepted" && "btn-on-delv") ||
-                        (item.status === "On_service" && "btn-on-delv") ||
-                        (item.status === "Cancelled" && "btn-cncl") ||
-                        (item.status === "Delivered" && "btn-delv")
+                        (item.status === "Dipesan" && "btn-order") ||
+                        (item.status === "Diterima" && "btn-on-delv") ||
+                        (item.status === "Diproses" && "btn-on-delv") ||
+                        (item.status === "Batal" && "btn-cncl") ||
+                        (item.status === "Selesai" && "btn-delv")
                       }
                     >
                       {item.status}
