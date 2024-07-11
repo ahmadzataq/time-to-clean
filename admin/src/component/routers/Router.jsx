@@ -14,7 +14,6 @@ import Login from "../login/Login";
 import SingleOrder from "../order/SingleOrder";
 import SingleCustomer from "../customer/SingleCustomer";
 import CompleteOrders from "../order/CompleteOrders";
-import PendingOrders from "../order/PendingOrders";
 
 const Router = () => {
   return (
@@ -29,7 +28,6 @@ const Router = () => {
         <Route path="/orders" element={<Order />} />
         <Route path="/orders/:id" element={<SingleOrder />} />
         <Route path="/complete-orders" element={<CompleteOrders />} />
-        <Route path="/pending-orders" element={<PendingOrders />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/change-details" element={<ChangeDetails />} />
         <Route path="/change-profile-pic" element={<ChangeProfilePic />} />

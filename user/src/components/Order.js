@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import { Col, Container, FormGroup, Input, Label, Row } from "reactstrap";
 import { useCart } from "react-use-cart";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+
 
 const Order = () => {
   // ADD TO CART
@@ -301,9 +303,9 @@ const Order = () => {
           <Col md={5} className="mb-5">
             <table className="cartTable">
               <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Qty</th>
                 <th>Total</th>
                 <th>Action</th>
               </tr>

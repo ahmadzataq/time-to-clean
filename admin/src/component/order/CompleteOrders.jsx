@@ -13,7 +13,7 @@ const CompleteOrders = () => {
       const { data } = await axios.get("/api/admin/orders"
       );
       const completeOrder = data.filter((curData) => {
-        return curData.status.toLowerCase() === "Selesai";
+        return curData.status.toLowerCase() === "selesai";
       });
       setOrders(completeOrder);
     };
@@ -54,7 +54,7 @@ const CompleteOrders = () => {
                   <td>
                     <Link to={"/orders/" + item._id}>{item._id}</Link>
                   </td>
-                  <td>{item.total_foods}</td>
+                  <td>{item.totalItems}</td>
                   <td>{item.total_quantity}</td>
                   <td>Rp. {item.total_price}</td>
                   <td>{item.payment}</td>
