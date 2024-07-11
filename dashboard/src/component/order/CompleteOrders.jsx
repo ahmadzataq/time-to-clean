@@ -67,15 +67,7 @@ const CompleteOrders = () => {
                   </td>
                   <td>{moment(item.order_date).format("lll")}</td>
                   <td>{moment(item.expTime).format("lll")}</td>
-                  <td>
-                    {item.delivery_man_name === "NaN" ? (
-                      "Nan"
-                    ) : (
-                      <Link to={"/delivery-men/" + item.delivery_man_id}>
-                        {item.delivery_man_name}
-                      </Link>
-                    )}
-                  </td>
+
                 </tr>
               ))
             )}

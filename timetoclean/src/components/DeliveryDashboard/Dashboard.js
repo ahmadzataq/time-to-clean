@@ -16,10 +16,6 @@ const Dashboard = () => {
   useEffect(() => {
     const fatchOrders = async () => {
       const { data } = await axios.get(`/api/admin/orders`);
-      const fatchCustomerOrders = data.filter((curData) => {
-        return curData.delivery_man_id === delivery_id;
-      });
-      setOrders(fatchCustomerOrders);
     };
     fatchOrders();
   }, [orders]);

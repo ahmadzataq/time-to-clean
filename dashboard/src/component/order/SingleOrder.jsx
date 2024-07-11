@@ -22,8 +22,6 @@ const SingleOrder = () => {
       setOrder(data);
       setitems(data.items);
       setStatus(data.status);
-      setDeliveryManId(data.delivery_man_id);
-      setDeliveryManName(data.delivery_man_name);
       setExpTime(data.expTime);
     };
     fatchOrder();
@@ -63,8 +61,6 @@ const SingleOrder = () => {
       status,
       accept_time: new Date(),
       expTime: expDate + "," + expTime,
-      delivery_man_id: deliveryManId,
-      delivery_man_name: deliveryManName,
     };
     axios
       .put(`/api/admin/orders/${id}`, updateData, {

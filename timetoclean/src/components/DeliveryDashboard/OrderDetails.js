@@ -19,7 +19,6 @@ const OrderDetails = () => {
       const { data } = await axios.get(`/api/admin/orders/${id}`);
       setOrder(data);
       setitems(data.items);
-      setDeliveryManID(data.delivery_man_id);
     };
     fatchOrder();
   }, [order]);
@@ -238,36 +237,6 @@ const OrderDetails = () => {
                       </Link>
                     )}
                 </div>
-              </Col>
-              <Col md={6}>
-                {order.delivery_man_id !== "NaN" && (
-                  <div className="order-summury">
-                    <h5>Delivery Man</h5>
-                    <ul>
-                      <li className="delivery-man-details">
-                        <img
-                          src={"/delivery-men/" + deliveryMan.thumb}
-                          alt={deliveryMan.name}
-                        />
-                      </li>
-                      <li title="Police Verified">
-                        <b>Name: </b> {deliveryMan.name}
-                      </li>
-                      <li>
-                        <b>Phone: </b>
-                        <a href={"tel:" + deliveryMan.phone}>
-                          {deliveryMan.phone}
-                        </a>
-                      </li>
-                      <li>
-                        <b>Email: </b>
-                        <a href={"mailto:" + deliveryMan.email}>
-                          {deliveryMan.email}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                )}
               </Col>
             </Row>
           </Col>
