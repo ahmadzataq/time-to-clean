@@ -11,7 +11,6 @@ const OrderDetails = () => {
   // GET SINGLE ORDER
   const [order, setOrder] = useState({});
   const [items, setitems] = useState([]);
-  const [deliveryManID, setDeliveryManID] = useState("");
   useEffect(() => {
     const fatchOrder = async () => {
       const { data } = await axios.get(`/api/admin/orders/${id}`);
@@ -19,18 +18,6 @@ const OrderDetails = () => {
       setitems(data.items);
     };
     fatchOrder();
-  }, [order]);
-
-  // GET DELIVERY MAN DETAILS
-  const [deliveryMan, setDeliveryMan] = useState({});
-  useEffect(() => {
-    const fatchDeliveryMan = async () => {
-      const { data } = await axios.get(
-        `/api/admin/delivery-men/${deliveryManID}`
-      );
-      setDeliveryMan(data);
-    };
-    fatchDeliveryMan();
   }, [order]);
 
   // CANCEL ORDER

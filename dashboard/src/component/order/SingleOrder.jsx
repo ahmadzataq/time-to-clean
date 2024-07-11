@@ -11,8 +11,6 @@ const SingleOrder = () => {
   const [status, setStatus] = useState("");
   const [expDate, setExpDate] = useState("");
   const [expTime, setExpTime] = useState("");
-  const [deliveryManId, setDeliveryManId] = useState("");
-  const [deliveryManName, setDeliveryManName] = useState("");
   // GET SINGLE ORDER
   const [order, setOrder] = useState({});
   const [items, setitems] = useState([]);
@@ -26,34 +24,7 @@ const SingleOrder = () => {
     };
     fatchOrder();
   }, [id]);
-
-  // GET ALL DELIVERY MAN
-  const [selectMan, setSelectMan] = useState([]);
-  useEffect(() => {
-    const fatchSelectMan = async () => {
-      const { data } = await axios.get("/api/admin/delivery-men");
-      const freeDeliveryMan = data.filter((curData) => {
-        return curData.pendingOrders < 3;
-      });
-      setSelectMan(freeDeliveryMan);
-    };
-    fatchSelectMan();
-  }, []);
-
-  // GEL SINGLE DELIVERY MAN
-  const deliveryMan = (deliveryManId) => {
-    if (deliveryManId) {
-      setDeliveryManId(deliveryManId);
-      const fatchDeliveryMen = async () => {
-        const { data } = await axios.get(
-          `/api/admin/delivery-men/${deliveryManId}`
-        );
-        setDeliveryManName(data.name);
-      };
-      fatchDeliveryMen();
-    }
-  };
-
+  
   // UPDATE ORDER
   const submitHandler = (e) => {
     e.preventDefault();

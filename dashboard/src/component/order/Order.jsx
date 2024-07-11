@@ -78,7 +78,6 @@ const Order = () => {
                 <tr
                   className={
                     (item.status === "Dipesan" && "text-bold") ||
-                    (item.status === "OnDelivery" && "text-bold") ||
                     (item.status === "Accept" && "text-bold")
                   }
                 >

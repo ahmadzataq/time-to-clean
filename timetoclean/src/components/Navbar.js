@@ -4,19 +4,12 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const customer = localStorage.getItem("cToken");
-  const delivery = localStorage.getItem("dToken");
 
   // CUSTOMER LOGOUT
   const customerLogout = () => {
     localStorage.removeItem("cToken");
     localStorage.removeItem("cID");
     localStorage.removeItem("cName");
-    window.location.href = "/";
-  };
-  // DELIVERY LOGOUT
-  const deliveryLogout = () => {
-    localStorage.removeItem("dToken");
-    localStorage.removeItem("dID");
     window.location.href = "/";
   };
 
@@ -98,31 +91,6 @@ export default function Navbar() {
                       className="nav-item  text-center text-md-left mx-2"
                       onClick={() => {
                         customerLogout();
-                      }}
-                    >
-                      <NavLink className="nav-link " to="#">
-                        <span>
-                          <i className="fa-solid fa-right-from-bracket"></i>
-                        </span>{" "}
-                        Keluar
-                      </NavLink>
-                    </li>
-                  </>
-                )}
-                {delivery && (
-                  <>
-                    <li className="nav-item  text-center text-md-left mx-2">
-                      <NavLink className="nav-link " to="/delivery">
-                        <span>
-                          <i className="fa-brands fa-dashcube"></i>
-                        </span>{" "}
-                        Halaman Utama
-                      </NavLink>
-                    </li>
-                    <li
-                      className="nav-item  text-center text-md-left mx-2"
-                      onClick={() => {
-                        deliveryLogout();
                       }}
                     >
                       <NavLink className="nav-link " to="#">
