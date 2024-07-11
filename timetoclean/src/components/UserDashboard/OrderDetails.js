@@ -233,7 +233,7 @@ const OrderDetails = () => {
                         : "NaN"}
                     </li>
                     <li>
-                      <b>Pickup Date: </b> {order.picupTime}
+                      <b>Tanggal Pengambilan: </b> {order.picupTime}
                     </li>
                     <li>
                       <b>Accept Time: </b>

@@ -60,17 +60,7 @@ const CartItems = () => {
           </div>
         </Link>
 
-        <Link to="/pending-orders">
-          <div className="single-card">
-            <div className="card-content">
-              <h4>Pending Orders</h4>
-              <span>{pendingOrders.length}+</span>
-            </div>
-            <span className="card-icon">
-              <i class="ri-exchange-dollar-fill"></i>
-            </span>
-          </div>
-        </Link>
+        
 
         <Link to="/complete-orders">
           <div className="single-card">

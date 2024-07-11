@@ -718,7 +718,7 @@ const EmergencyService = () => {
                   data-toggle="dropdown"
                   type="button"
                 >
-                  Select Service
+                  Pilih Layanan
                 </DropdownToggle>
                 <DropdownMenu>
                   <Link to="/SoftClean" className="s">

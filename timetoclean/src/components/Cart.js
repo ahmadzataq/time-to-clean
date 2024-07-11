@@ -33,15 +33,15 @@ const Cart = () => {
     <>
       <table className="cartTable">
         <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
+          <th>Nama</th>
+          <th>Harga</th>
+          <th>Banyaknya</th>
           <th>Total</th>
           <th>Action</th>
         </tr>
         {isEmpty ? (
           <tr>
-            <td colSpan="6">Your Cart is Empty.</td>
+            <td colSpan="6">Keranjang Anda Kosong.</td>
           </tr>
         ) : (
           items.map((item) => (

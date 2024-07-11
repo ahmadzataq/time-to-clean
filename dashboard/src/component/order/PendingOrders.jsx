@@ -22,69 +22,6 @@ const PendingOrders = () => {
 
   return (
     <>
-      <section className="order content">
-        <Title title="Pending Orders" />
-        <div className="order-items">
-          <table>
-            <tr>
-              <th>Customer</th>
-              <th>Order_id</th>
-              <th>Items</th>
-              <th>Qty</th>
-              <th>Total_price</th>
-              <th>Payment</th>
-              <th>Status</th>
-              <th>Order_date</th>
-              <th>Exp_Time</th>
-            </tr>
-            {orders.length === 0 ? (
-              <tr>
-                <td className="text-center" colSpan="13">
-                  No items found!
-                </td>
-              </tr>
-            ) : (
-              orders.map((item) => (
-                <tr>
-                  <td>
-                    <Link to={"/customers/" + item.customer_id}>
-                      {item.customer_name}
-                    </Link>
-                  </td>
-                  <td>
-                    <Link to={"/orders/" + item._id}>{item._id}</Link>
-                  </td>
-                  <td>{item.total_foods}</td>
-                  <td>{item.total_quantity}</td>
-                  <td>Rp. {item.total_price}</td>
-                  <td>{item.payment}</td>
-                  <td>
-                    <span
-                      className="btn-small"
-                    >
-                      {item.status}
-                    </span>
-                  </td>
-                  <td>{moment(item.order_date).format("lll")}</td>
-                  <td>
-                  {item.expTime === "0" ? "NaN"
-                        : moment(item.expTime).format("lll")}
-                  </td>
-                  <td>
-                    {item.delivery_man_name === "NaN" ? (
-                      "Nan"
-                    ) : (
-                      <Link to={"/delivery-men/" + item.delivery_man_id}>
-                        {item.delivery_man_name}
-                      </Link>
-                    )}
-                  </td>
-                </tr>
-              ))
-            )}
-          </table>
-        </div>
-      </section>
     </>
   );
 };

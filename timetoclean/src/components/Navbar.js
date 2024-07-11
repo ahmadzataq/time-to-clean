@@ -56,7 +56,7 @@ export default function Navbar() {
                     <span>
                       <i className="fa fa-fw fa-home"></i>
                     </span>{" "}
-                    Home
+                    Beranda
                   </NavLink>
                 </li>
                 <li className="nav-item text-light text-center text-md-left mx-2 ">
@@ -64,7 +64,7 @@ export default function Navbar() {
                     <span>
                       <i className="fa-solid fa-gear"></i>
                     </span>{" "}
-                    Services
+                    Pelayanan
                   </NavLink>
                 </li>
                 <li className="nav-item text-center text-md-left mx-2 ">
@@ -72,7 +72,7 @@ export default function Navbar() {
                     <span>
                       <i className="fa-solid fa-cart-shopping"></i>
                     </span>{" "}
-                    Order
+                    Pesanan
                   </NavLink>
                 </li>                
                 {!customer ? (
@@ -81,7 +81,7 @@ export default function Navbar() {
                       <span>
                         <i className="fa-solid fa-right-to-bracket"></i>
                       </span>{" "}
-                      Sign In
+                      Masuk
                     </NavLink>
                   </li>
                 ) : (
@@ -91,7 +91,7 @@ export default function Navbar() {
                         <span>
                           <i className="fa-brands fa-dashcube"></i>
                         </span>{" "}
-                        Dashboard
+                        Halaman Utama
                       </NavLink>
                     </li>
                     <li
@@ -104,7 +104,7 @@ export default function Navbar() {
                         <span>
                           <i className="fa-solid fa-right-from-bracket"></i>
                         </span>{" "}
-                        Logout
+                        Keluar
                       </NavLink>
                     </li>
                   </>
@@ -116,7 +116,7 @@ export default function Navbar() {
                         <span>
                           <i className="fa-brands fa-dashcube"></i>
                         </span>{" "}
-                        Dashboard
+                        Halaman Utama
                       </NavLink>
                     </li>
                     <li
@@ -129,7 +129,7 @@ export default function Navbar() {
                         <span>
                           <i className="fa-solid fa-right-from-bracket"></i>
                         </span>{" "}
-                        Logout
+                        Keluar
                       </NavLink>
                     </li>
                   </>

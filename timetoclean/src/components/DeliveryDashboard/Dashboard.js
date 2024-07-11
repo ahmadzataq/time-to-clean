@@ -69,7 +69,7 @@ const Dashboard = () => {
     return (
       <Container>
         <div className="d-flex justify-content-center mb-4">
-          <h2 className="text-title head-title mt-5">Order History</h2>
+          <h2 className="text-title head-title mt-5">Riwayat Pesanan</h2>
         </div>
         <Row>
           <Col md={4} className="mb-5">

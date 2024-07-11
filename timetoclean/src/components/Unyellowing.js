@@ -92,7 +92,7 @@ const Unyellowing = () => {
                   data-toggle="dropdown"
                   type="button"
                 >
-                  Select Service
+                  Pilih Layanan
                 </DropdownToggle>
                 <DropdownMenu>
                   <Link to="/DeepClean" className="s">
@@ -132,7 +132,7 @@ const Unyellowing = () => {
                           <ListItem>
                             <Typography>
                               <span className="price">Rp. {item.price}</span> /
-                              pair
+                              Pasang
                             </Typography>
                             <ListItemText secondary="" />
                             <div className={item.ac}>
@@ -189,7 +189,7 @@ const Unyellowing = () => {
                           <ListItem>
                             <Typography>
                               <span className="price">Rp. {item.price}</span> /
-                              pair
+                              Pasang
                             </Typography>
                             <ListItemText secondary="" />
                             <div className={item.ac}>

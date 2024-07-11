@@ -5,7 +5,7 @@ const About = () => {
     <section id="about-us">
       <Container>
         <div className="d-flex justify-content-center mb-4">
-          <h2 className="text-title head-title mt-5">About Us</h2>
+          <h2 className="text-title head-title mt-5">Tentang Kami</h2>
         </div>
         <Row className="mt-5">
           <Col md={6} className="d-flex justify-content-center">

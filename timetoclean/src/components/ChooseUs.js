@@ -63,7 +63,7 @@ const ChooseUs = () => {
     <section className="mb-3 mt-5" id="ChooseUs">
       <Container>
         <div className="d-flex justify-content-center mt-5">
-          <h2 className="text-title head-title ">Why Choose Us</h2>
+          <h2 className="text-title head-title ">Kenapa Pilih Kami?</h2>
         </div>
         <Row>
           {details.map((item) => (

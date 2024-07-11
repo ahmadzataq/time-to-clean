@@ -130,23 +130,23 @@ const Order = () => {
         <Row>
           <Col md={7}>
             <h4 className="px-2 mb-3 text-title">
-              Edit Pickup & Delivery Details
+              Detail Pesanan
             </h4>
             <hr />
 
             <div className="address-details px-2 mb-3">
               <form className="py-2" onSubmit={submitHandler}>
                 <div className="px-2 mb-3">
-                  <h5>Schedule</h5>
-                  <span className="from-text ">
+                  <h5>Jadwal</h5>
+                  {/* <span className="from-text ">
                     Expert will arrive at your given address within 30 minutes
-                  </span>
+                  </span> */}
                 </div>
 
                 <TextField
                   name="getDate"
                   id="date"
-                  label="Pickup Date"
+                  label="Tanggal Pengambilan"
                   type="date"
                   className="px-2 mb-3"
                   InputLabelProps={{
@@ -159,7 +159,7 @@ const Order = () => {
                 <TextField
                   name="getTime"
                   id="time"
-                  label="Pickup Time"
+                  label="Jam"
                   type="time"
                   InputLabelProps={{
                     shrink: true,
@@ -174,17 +174,17 @@ const Order = () => {
                 
 
                 <div>
-                  <h5>Contact Person</h5>
-                  <span className="from-text">
+                  <h5>Data Diri</h5>
+                  {/* <span className="from-text">
                     Expert will arrive at the address given below
-                  </span>
+                  </span> */}
                 </div>
 
                 <FormGroup>
                   <input
                     name="fullName"
                     className="form-control my-3"
-                    placeholder="Full Name"
+                    placeholder="Nama Lengkap"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -205,24 +205,24 @@ const Order = () => {
                     name="phone"
                     type="phone"
                     className="form-control my-3"
-                    placeholder="Mobile Number"
+                    placeholder="Nomor Telepon"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                   />
                 </FormGroup>
 
                 <div className="mt-4">
-                  <h5>Address</h5>
-                  <span className="from-text">
+                  <h5>Alamat</h5>
+                  {/* <span className="from-text">
                     Expert will arrive at the address given below
-                  </span>
+                  </span> */}
                 </div>
 
                 <FormGroup>
                   <input
                     name="toDoor"
                     className="form-control my-3"
-                    placeholder="Delivery To Door"
+                    placeholder="Keterangan Tambahan"
                     value={toDoor}
                     onChange={(e) => setToDoor(e.target.value)}
                   />
@@ -232,7 +232,7 @@ const Order = () => {
                   <input
                     name="road"
                     className="form-control my-3"
-                    placeholder="Road Name"
+                    placeholder="Nama Jalan"
                     value={road}
                     onChange={(e) => setRoad(e.target.value)}
                   />
@@ -242,7 +242,7 @@ const Order = () => {
                   <input
                     name="flat"
                     className="form-control my-3"
-                    placeholder="Flat Name, Room Number or Floor"
+                    placeholder="Nomor Rumah"
                     value={flatName}
                     onChange={(e) => setFlatName(e.target.value)}
                   />
@@ -251,7 +251,7 @@ const Order = () => {
                 <FormGroup>
                   <textarea
                     name="address"
-                    placeholder="Address"
+                    placeholder="Alamat"
                     className="form-control my-3"
                     cols="30"
                     rows="2"
@@ -261,10 +261,10 @@ const Order = () => {
                 </FormGroup>
 
                 <div className="mt-4 mb-3">
-                  <h5>Payment Method</h5>
-                  <span className="from-text">
+                  <h5>Metode Pembayaran</h5>
+                  {/* <span className="from-text">
                     Expert will collect your payment after delivery your order
-                  </span>
+                  </span> */}
                 </div>
 
                 <FormGroup check className="form-check-radio " inline>
@@ -277,7 +277,7 @@ const Order = () => {
                       onChange={(e) => setPayment(e.target.value)}
                       required
                     />
-                    Cash<span className="form-check-sign " />
+                    Tunai<span className="form-check-sign " />
                   </Label>
                   <FormGroup
                     check
@@ -318,7 +318,7 @@ const Order = () => {
               </tr>
               {isEmpty ? (
                 <tr>
-                  <td colSpan="6">Your Cart is Empty.</td>
+                  <td colSpan="6">Keranjang Anda Kosong!</td>
                 </tr>
               ) : (
                 items.map((item) => (

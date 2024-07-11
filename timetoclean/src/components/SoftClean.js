@@ -138,7 +138,7 @@ const SoftClean = () => {
                   data-toggle="dropdown"
                   type="button"
                 >
-                  Select Service
+                  Pilih Layanan
                 </DropdownToggle>
                 <DropdownMenu>
                 <Link to="/DeepClean" className="s">
@@ -178,7 +178,7 @@ const SoftClean = () => {
                           <ListItem>
                             <Typography>
                               <span className="price">Rp. {item.price}</span> /
-                              pair
+                              Pasang
                             </Typography>
                             <ListItemText secondary="" />
                             <div className={item.ac}>
@@ -189,8 +189,8 @@ const SoftClean = () => {
                                   addItemHandlar(item, item.id);
                                 }}
                               >
-                                <i class="fa-solid fa-cart-shopping"></i> Add to
-                                bag
+                                <i class="fa-solid fa-cart-shopping"></i> Tambah
+                                
                               </Button>
                             </div>
 
@@ -235,7 +235,7 @@ const SoftClean = () => {
                           <ListItem>
                             <Typography>
                               <span className="price">Rp. {item.price}</span> /
-                              pair
+                              Pasang
                             </Typography>
                             <ListItemText secondary="" />
                             <div className={item.ac}>
@@ -246,8 +246,8 @@ const SoftClean = () => {
                                   addItemHandlar(item, item.id);
                                 }}
                               >
-                                <i class="fa-solid fa-cart-shopping"></i> Add to
-                                bag
+                                <i class="fa-solid fa-cart-shopping"></i>Tambah
+                                
                               </Button>
                             </div>
 

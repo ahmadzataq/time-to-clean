@@ -9,7 +9,7 @@ const Footer = () => {
       <Container>
         <Row className="py-3">
           <Col md={6} className="py-3">
-            <h4 className="text-title">Time To Clean Online Shoe Laundry Service</h4>
+            <h4 className="text-title">Pelayanan Cuci Sepatu Time To Clean</h4>
             <p className="text-white">Email: zahidtaqiyuddinahmad@gmail.com</p>
             <p className="text-white">Phone: 081584594961 (whatsapp)</p>
           </Col>
@@ -18,7 +18,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li className="py-2">
                 <Link></Link>
-                <a href="https://wa.link/l4f4vv">Contact Us</a>
+                <a href="https://wa.link/l4f4vv">Hubungi Kami</a>
               </li>
             </ul>
           </Col>

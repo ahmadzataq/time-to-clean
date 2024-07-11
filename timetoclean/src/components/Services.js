@@ -63,7 +63,7 @@ const Services = () => {
                     <Link to={service.link}>
                       <Button color="primary" className="service-button">
                         <i className="now-ui-icons arrows-1_minimal-right" />
-                        <span className="nav-name">Select Service</span>
+                        <span className="nav-name">Pilih Layanan</span>
                       </Button>
                     </Link>
                   </CardBody>

@@ -75,7 +75,7 @@ const Homeslideshow = () => {
             </p>
             <Link to="/services">
               <Button className="nav-name my-4" color="primary">
-                View Services
+                Lihat Layanan
               </Button>
             </Link>
           </Col>
