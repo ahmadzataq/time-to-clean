@@ -14,15 +14,7 @@ const Profile = () => {
       setCustomer(data);
     };
     fatchCustomer();
-  }, [customer]);
-
-  // CUSTOMER LOGOUT
-  const customerLogout = () => {
-    localStorage.removeItem("cToken");
-    localStorage.removeItem("cID");
-    localStorage.removeItem("cName");
-    window.location.href = "/";
-  };
+  }, [id]);
 
   return (
     <>
@@ -45,16 +37,7 @@ const Profile = () => {
           <p>
             <i className="fa fa-fw fa-location-dot"></i> {customer.address}
           </p>
-          {/* <Link to="/customer/settings">Setting</Link>{" "}
-          <Link to="/customer/profile-picture">Picture</Link>{" "}
-          <Link to="/customer/password">Password</Link>{" "}
-          <Link
-            onClick={() => {
-              customerLogout();
-            }}
-          >
-            Logout
-          </Link> */}
+          <Link to="/customer/settings">Setting</Link>{" "}
         </div>
       </div>
     </>
