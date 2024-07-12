@@ -125,7 +125,7 @@ const SoftClean = () => {
         <Container>
           <div className="row justify-content-between py-3">
             <div className="col-md-8">
-              <h2 className="text-title">Soft Clean</h2>
+              <h2 className="text-title"> Soft Clean</h2>
             </div>
             <div className="col-md-4">
               <span className="mr-3">Ingin Memilih Layanan Lain ?</span>
@@ -141,13 +141,13 @@ const SoftClean = () => {
                   Pilih Layanan
                 </DropdownToggle>
                 <DropdownMenu>
-                <Link to="/DeepClean" className="s">
+                <Link to="/deepclean" className="s">
                     <DropdownItem className="sd">Deep Clean</DropdownItem>
                   </Link>
-                  <Link to="/SoftClean" className="s">
+                  <Link to="/softclean" className="s">
                     <DropdownItem className="sd">Soft Clean</DropdownItem>
                   </Link>
-                  <Link to="/Unyellowing" className="s">
+                  <Link to="/unyellowing" className="s">
                     <DropdownItem className="sd">Unyellowing</DropdownItem>
                   </Link>
                 </DropdownMenu>

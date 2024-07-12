@@ -95,13 +95,13 @@ const Unyellowing = () => {
                   Pilih Layanan
                 </DropdownToggle>
                 <DropdownMenu>
-                  <Link to="/DeepClean" className="s">
+                  <Link to="/deepclean" className="s">
                     <DropdownItem className="sd">Deep Clean</DropdownItem>
                   </Link>
-                  <Link to="/SoftClean" className="s">
+                  <Link to="/softclean" className="s">
                     <DropdownItem className="sd">Soft Clean</DropdownItem>
                   </Link>
-                  <Link to="/Unyellowing" className="s">
+                  <Link to="/unyellowing" className="s">
                     <DropdownItem className="sd">Unyellowing</DropdownItem>
                   </Link>                                   
                 </DropdownMenu>

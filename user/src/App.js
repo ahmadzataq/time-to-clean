@@ -29,9 +29,9 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/services" element={<Services />} />
             <Route exact path="/login" element={<Login />} />
-            <Route exact path="/DeepClean" element={<DeepClean />} />
-            <Route exact path="/SoftClean" element={<SoftClean />} />
-            <Route exact path="/Unyellowing" element={<Unyellowing />} />
+            <Route exact path="/deepclean" element={<DeepClean />} />
+            <Route exact path="/softclean" element={<SoftClean />} />
+            <Route exact path="/unyellowing" element={<Unyellowing />} />
             <Route exact path="/order" element={<Order />} />
             <Route exact path="/customer/settings/" element={<Settings />} />
             <Route exact path="/customer" element={<Dashboard />} />
