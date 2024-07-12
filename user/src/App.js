@@ -1,8 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./index.css";
-import DryCleaning from "./components/DryCleaning";
-import EmergencyService from "./components/EmergencyService";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Unyellowing from "./components/Unyellowing";
@@ -34,12 +32,6 @@ function App() {
             <Route exact path="/DeepClean" element={<DeepClean />} />
             <Route exact path="/SoftClean" element={<SoftClean />} />
             <Route exact path="/Unyellowing" element={<Unyellowing />} />
-            <Route exact path="/DryCleaning" element={<DryCleaning />} />
-            <Route
-              exact
-              path="/EmergencyService"
-              element={<EmergencyService />}
-            />
             <Route exact path="/order" element={<Order />} />
             <Route exact path="/customer/settings/" element={<Settings />} />
             <Route exact path="/customer" element={<Dashboard />} />
