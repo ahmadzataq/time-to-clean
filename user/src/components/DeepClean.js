@@ -119,10 +119,10 @@ const DeepClean = () => {
         <Container>
           <div className="row justify-content-between py-3">
             <div className="col-md-8">
-              <h2 className="text-title">Deep Clean Service</h2>
+              <h2 className="text-title">Deep Clean</h2>
             </div>
             <div className="col-md-4">
-              <span className="mr-3">Want to go another service?</span>
+              <span className="mr-3">Ingin Memilih Layanan Lain ?</span>
               <Dropdown className="btn-group">
                 <DropdownToggle
                   aria-expanded={false}

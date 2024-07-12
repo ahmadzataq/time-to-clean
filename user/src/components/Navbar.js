@@ -84,7 +84,7 @@ export default function Navbar() {
                         <span>
                           <i className="fa-brands fa-dashcube"></i>
                         </span>{" "}
-                        Halaman Utama
+                        Dasbor
                       </NavLink>
                     </li>
                     <li

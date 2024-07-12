@@ -708,7 +708,7 @@ const EmergencyService = () => {
               <h2 className="text-title">Emergency Service Service</h2>
             </div>
             <div className="col-md-4">
-              <span className="mr-3">Want to go another service?</span>
+              <span className="mr-3">Ingin Memilih Layanan Lain ?</span>
               <Dropdown className="btn-group">
                 <DropdownToggle
                   aria-expanded={false}

@@ -132,7 +132,7 @@ const Login = () => {
                 className="title"
                 style={{ fontFamily: "Handlee, cursive", color: "#1665a0" }}
               >
-                Sign in
+                Masuk
               </h2>
 
               <div className="input-field">
@@ -170,7 +170,7 @@ const Login = () => {
                 value="Log In"
                 onClick={login}
               >
-                SIGN IN
+                MASUK
               </button>
 
             </form>
@@ -284,32 +284,32 @@ const Login = () => {
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h3>New here ?</h3>
+              <h3>It's Time To Clean !!!</h3>
               <p>
-                To get our best Laundry Services In your Door Step Sign Up here.
+                Untuk Mendapatkan Layanan Cuci Sepatu, Ayo Daftar!
               </p>
               <button
                 className="btnz transparent"
                 onClick={() => setToggled(!toggled)}
                 id="sign-up-btn"
               >
-                Sign up
+                Daftar
               </button>
             </div>
             <img src={loginPic} className="image" alt="" />
           </div>
           <div className="panel right-panel">
             <div className="content">
-              <h3> One of us ?</h3>
+              <h3>It's Time To Clean !!!</h3>
               <p>
-                Already Have an Account ? Login to enjoy our Laundry Services.
+                Sudah Punya Akun ? Ayo Masuk!
               </p>
               <button
                 className="btnz transparent"
                 onClick={() => setToggled(!toggled)}
                 id="sign-in-btn"
               >
-                Sign in
+                Masuk
               </button>
             </div>
             <img src={registerPic} className="image" alt="" />
