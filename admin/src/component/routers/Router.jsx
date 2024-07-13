@@ -4,8 +4,6 @@ import Customer from "../customer/Customer";
 import Dashboard from "../dashboard/Dashboard";
 import ErrorPage from "../error-page/ErrorPage";
 import Order from "../order/Order";
-import NewUser from "../user/NewUser";
-import User from "../user/User";
 import Login from "../login/Login";
 import SingleOrder from "../order/SingleOrder";
 import SingleCustomer from "../customer/SingleCustomer";
@@ -19,8 +17,6 @@ const Router = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/customers" element={<Customer />} />
         <Route path="/customers/:id" element={<SingleCustomer />} />
-        <Route path="/users" element={<User />} />
-        <Route path="/new-user" element={<NewUser />} />
         <Route path="/orders" element={<Order />} />
         <Route path="/orders/:id" element={<SingleOrder />} />
         <Route path="/complete-orders" element={<CompleteOrders />} />

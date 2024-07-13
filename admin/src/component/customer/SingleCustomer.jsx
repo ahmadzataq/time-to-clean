@@ -73,42 +73,35 @@ const SingleCustomer = () => {
         <Title title="Customer Profile" />
         <div className="profile-items">
           <div className="left">
-            <img
-              src={"/customers/" + customer.thumb}
-              alt={customer.name}
-            />
             <div class="card">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  <b>Name: </b> {customer.name}
+                  <b>Nama: </b> {customer.name}
                 </li>
                 <li class="list-group-item">
                   <b>Email: </b> {customer.email}
                 </li>
                 <li class="list-group-item">
-                  <b>Phone: </b> {customer.phone}
+                  <b>Telepon: </b> {customer.phone}
                 </li>
                 <li class="list-group-item">
-                  <b>Address: </b> {customer.address}
+                  <b>Alamat: </b> {customer.address}
                 </li>
               </ul>
             </div>
             <Link className="btn-primary" to="/customers">
-              BACK
+              KEMBALI
             </Link>{" "}
-            <Link
-              onClick={() => deleteHandler(customer._id, customer.thumb)}
-              className="btn-delete"
-            >
-              DELETE
+            <Link onClick={() => deleteHandler(customer._id, customer.thumb)} className="btn-delete">
+              HAPUS
             </Link>
           </div>
           <div className="right">
             <table className="customers-order">
               <tr>
-                <th>Order ID</th>
-                <th>Order date</th>
-                <th>Order status</th>
+                <th>Id Pesanan</th>
+                <th>Tanggal Pesanan</th>
+                <th>Status Pesanan</th>
                 <th>Action</th>
               </tr>
               {orders.length === 0 ? (

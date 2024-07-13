@@ -49,11 +49,10 @@ const Customer = () => {
         <div className="customer-items">
           <table>
             <tr>
-              <th>Thumb</th>
-              <th>Name</th>
+              <th>Nama</th>
               <th>Email</th>
-              <th>phone</th>
-              <th>Address</th>
+              <th>Telepon</th>
+              <th>Alamat</th>
               <th>Action</th>
             </tr>
             {customers.length === 0 ? (
@@ -65,14 +64,6 @@ const Customer = () => {
             ) : (
               customers.map((item) => (
                 <tr>
-                  <td>
-                    <img
-                      src={"/customers/" +
-                        item.thumb
-                      }
-                      alt={item.name}
-                    />
-                  </td>
                   <td>
                     <Link to={"/customers/" + item._id}>{item.name}</Link>
                   </td>

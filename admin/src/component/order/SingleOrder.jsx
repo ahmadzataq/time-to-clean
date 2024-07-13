@@ -237,7 +237,7 @@ const SingleOrder = () => {
           <div className="btn-box text-center">
             <button className="btn-primary">Update</button>
             <Link onClick={() => deleteHandler()} className="btn-delete">
-              Delete
+              Hapus
             </Link>
           </div>
         </form>
