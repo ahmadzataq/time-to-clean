@@ -46,12 +46,6 @@ const TopNav = () => {
 
             <div className="topnav-profile-img">
               <Link to="profile" title="Profile">
-                {!admin.thumb ? (
-                  <img src={"/default/avatar.png"} alt={admin.thumb} />
-                ) : (
-                  <img src={"/users/" + admin.thumb} alt={admin.thumb} />
-                )}
-
                 <span className="badge">{admin.username}</span>
               </Link>
             </div>

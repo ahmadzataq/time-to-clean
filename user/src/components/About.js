@@ -19,7 +19,7 @@ const About = () => {
               periode waktu tertentu untuk memberikan layanan pencucian sepatu 
               anda agar bersih dalam waktu penyelesaian sesingkat mungkin. 
               Time To Clean memberikan Anda Penjemputan dan Pengiriman gratis
-              pada sepatu kotormu untuk daerah Depok, Jakarta Timur dan sekitarnya. 
+              pada sepatu kotormu untuk daerah Depok dan sekitarnya. 
               Dengan Situs Web dan Nomor Telepon Kami, Anda tinggal menjadwalkan pemesanan 
               dan kami akan mengambilnya dari rumah anda!
             </p>

@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Col, Container, FormGroup, Input, Label, Row } from "reactstrap";
 import { useCart } from "react-use-cart";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-
 
 const Order = () => {
   // ADD TO CART
@@ -35,7 +33,6 @@ const Order = () => {
     });
   };
 
-  
   // PLACE ORDER
   const customer_id = localStorage.getItem("cID");
   const customer_name = localStorage.getItem("cName");
@@ -47,13 +44,17 @@ const Order = () => {
   const [address, setAddress] = useState("");
   const [payment, setPayment] = useState("");
 
-
-  var pendingPayment;
-  if (payment === "Tunai") {
-    pendingPayment = "Yes";
-  } else {
-    pendingPayment = "No";
-  }
+  const id = localStorage.getItem("cID");
+  useEffect(() => {
+    const fatchCustomer = async () => {
+      const { data } = await axios.get(`/api/admin/customers/${id}`);
+      setName(data.name);
+      setEmail(data.email);
+      setPhone(data.phone);
+      setAddress(data.address);
+    };
+    fatchCustomer();
+  }, [id]);
 
   console.log(picupDate + "," + picupTime);
 
@@ -71,7 +72,6 @@ const Order = () => {
           name,
           address: address,
           payment,
-          pendingPayment,
           totalItems: totalUniqueItems,
           total_quantity: totalItems,
           total_price: cartTotal,
@@ -120,18 +120,13 @@ const Order = () => {
         </div>
         <Row>
           <Col md={7}>
-            <h4 className="px-2 mb-3 text-title">
-              Detail Pesanan
-            </h4>
+            <h4 className="px-2 mb-3 text-title">Detail Pesanan</h4>
             <hr />
 
             <div className="address-details px-2 mb-3">
               <form className="py-2" onSubmit={submitHandler}>
                 <div className="px-2 mb-3">
                   <h5>Jadwal</h5>
-                  {/* <span className="from-text ">
-                    Expert will arrive at your given address within 30 minutes
-                  </span> */}
                 </div>
 
                 <TextField
@@ -162,13 +157,8 @@ const Order = () => {
                   onChange={(e) => setPicupTime(e.target.value)}
                 />
 
-                
-
                 <div>
                   <h5>Data Diri</h5>
-                  {/* <span className="from-text">
-                    Expert will arrive at the address given below
-                  </span> */}
                 </div>
 
                 <FormGroup>
@@ -231,7 +221,8 @@ const Order = () => {
                       onChange={(e) => setPayment(e.target.value)}
                       required
                     />
-                    Tunai<span className="form-check-sign " />
+                    Tunai
+                    <span className="form-check-sign " />
                   </Label>
                   <FormGroup
                     check
@@ -325,10 +316,8 @@ const Order = () => {
                       </Link>
                     </td>
                   </tr>
-                  
                 </>
               )}
-              
             </table>
           </Col>
         </Row>

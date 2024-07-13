@@ -83,7 +83,7 @@ const Settings = () => {
                     className="title"
                     style={{ fontFamily: "Handlee, cursive", color: "#1665a0" }}
                   >
-                    Informations
+                    Profil
                   </h3>
 
                   <div className="input-field">
@@ -95,7 +95,7 @@ const Settings = () => {
                       autoComplete="off"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder=" Your Name"
+                      placeholder="Nama"
                     />
                   </div>
 
@@ -108,7 +108,7 @@ const Settings = () => {
                       autoComplete="off"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="Your Phone Number"
+                      placeholder="No. HP"
                     />
                   </div>
                   <div className="input-field">
@@ -123,7 +123,7 @@ const Settings = () => {
                       autoComplete="off"
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
-                      placeholder=" Your Address"
+                      placeholder="Alamat"
                     />
                   </div>
 

@@ -4,10 +4,6 @@ import Customer from "../customer/Customer";
 import Dashboard from "../dashboard/Dashboard";
 import ErrorPage from "../error-page/ErrorPage";
 import Order from "../order/Order";
-import ChangeDetails from "../profile/ChangeDetails";
-import ChangePassword from "../profile/ChangePassword";
-import ChangeProfilePic from "../profile/ChangeProfilePic";
-import Profile from "../profile/Profile";
 import NewUser from "../user/NewUser";
 import User from "../user/User";
 import Login from "../login/Login";
@@ -28,10 +24,6 @@ const Router = () => {
         <Route path="/orders" element={<Order />} />
         <Route path="/orders/:id" element={<SingleOrder />} />
         <Route path="/complete-orders" element={<CompleteOrders />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/change-details" element={<ChangeDetails />} />
-        <Route path="/change-profile-pic" element={<ChangeProfilePic />} />
-        <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
