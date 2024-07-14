@@ -24,17 +24,17 @@ router.post("/", async (req, res) => {
 
             return res.status(200).send({
               success: true,
-              message: "User is logged in successfully",
+              message: "User Berhasil Login!",
               token: "Bearer " + token,
               id: user._id,
               name: user.name,
             });
           } else {
-            res.json({ message: "Password doesn't match." });
+            res.json({ message: "Password tidak cocok." });
           }
         });
       } else {
-        res.json({ message: "Email doesn't exist." });
+        res.json({ message: "Email tidak terdaftar." });
       }
     });
   } catch (error) {

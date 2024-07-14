@@ -2,17 +2,17 @@ const navLinks = [
   {
     path: "/dashboard",
     icon: "ri-apps-2-line",
-    display: "Dashboard",
+    display: "Dasbor",
   },
   {
     path: "/orders",
     icon: "ri-shopping-basket-line",
-    display: "Orders",
+    display: "Pesanan",
   },
   {
     path: "/customers",
     icon: "ri-map-pin-user-fill",
-    display: "Customers",
+    display: "Pelanggan",
   },
 ];
 

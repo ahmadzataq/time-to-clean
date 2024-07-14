@@ -17,7 +17,7 @@ const SingleCustomer = () => {
       setCustomer(data);
     };
     fatchCustomer();
-  }, [customer]);
+  }, []);
 
   // GET ORDERS
   const [orders, setOrders] = useState([]);
@@ -31,7 +31,7 @@ const SingleCustomer = () => {
       setOrders(fatchOrders);
     };
     fatchOrders();
-  }, [orders]);
+  }, []);
 
   // CUSTOMER DELETE
   const deleteHandler = (id, thumb) => {

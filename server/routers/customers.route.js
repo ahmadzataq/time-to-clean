@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
     const email = req.body.email;
     const emailCheck = await Customers.findOne({ email: email });
     if (emailCheck) {
-      res.json({ message: "Already registered." });
+      res.json({ message: "Email sudah terdaftar." });
     } else {
       const filePath = "uploads/default/avatar.png";
       const avatar = Date.now() + "-avatar.png";
@@ -59,7 +59,7 @@ router.post("/", async (req, res) => {
 
           return res.status(200).send({
             success: true,
-            message: "Registration successfull.",
+            message: "Berhasil daftar..",
             token: "Bearer " + token,
             id: user._id,
             name: user.name,
@@ -78,13 +78,13 @@ router.get("/", async (req, res) => {
     .sort({ _id: -1 })
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "No customer found." });
+        res.status(404).send({ message: "Pelanggan tidak ditemukan." });
       } else {
         res.status(200).send(data);
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error to find customer." });
+      res.status(500).send({ message: "Error dalam mencari pelanggan." });
     });
 });
 
@@ -94,13 +94,13 @@ router.get("/:id", async (req, res) => {
   await Customers.findById(id)
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "No customer found." });
+        res.status(404).send({ message: "Pelanggan tidak ditemukan." });
       } else {
         res.status(200).send(data);
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error to find customer." });
+      res.status(500).send({ message: "Error dalam mencari pelanggan." });
     });
 });
 
@@ -109,7 +109,7 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
   const id = req.params.id;
 
   if (!req.body) {
-    return res.json({ Message: "Data to update can not be empty." });
+    return res.json({ Message: "Data yang akan diupdate tidak boleh kosong." });
   }
   // If no new thumbnail found.
   if (req.body.oldPassword) {
@@ -131,23 +131,23 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
               )
                 .then((data) => {
                   if (!data) {
-                    res.json({ message: "Can not update." });
+                    res.json({ message: "Gagal mengupdate." });
                   } else {
-                    res.json({ message: "Updated successfull." });
+                    res.json({ message: "Sukses Mengupdate." });
                   }
                 })
                 .catch((err) => {
                   res
                     .status(500)
-                    .send({ message: "Error updatating customer." });
+                    .send({ message: "Error dalam mengupdate pelanggan." });
                 });
             });
           } else {
-            res.json({ message: "Old password doesn't match." });
+            res.json({ message: "Password salah." });
           }
         });
       } else {
-        res.json({ message: "Something wrong." });
+        res.json({ message: "Terjadi kesalahan." });
       }
     });
   } else if (req.body.thumb) {
@@ -156,13 +156,13 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
     })
       .then((data) => {
         if (!data) {
-          res.json({ message: "Can not update." });
+          res.json({ message: "Gagal mengupdate." });
         } else {
-          res.json({ data, message: "Updated successful." });
+          res.json({ data, message: "Berhasil mengupdate." });
         }
       })
       .catch((err) => {
-        res.json({ message: "Error updatating customer." });
+        res.json({ message: "Error dalam mengupdate pelanggan." });
       });
   } else if (req.file.filename) {
     // Delete old thumbnail
@@ -179,13 +179,13 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
     )
       .then((data) => {
         if (!data) {
-          res.json({ message: "Can not update." });
+          res.json({ message: "Gagal mengupdate." });
         } else {
-          res.json({ message: "Update Successfull." });
+          res.json({ message: "Berhasil mengupdate." });
         }
       })
       .catch((err) => {
-        res.json({ message: "Error updatating customer." });
+        res.json({ message: "Error dalam mengupdate pelanggan." });
       });
   }
 });
@@ -201,13 +201,13 @@ router.delete("/:id", async (req, res) => {
   await Customers.findByIdAndDelete(id)
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "Can not delete." });
+        res.status(404).send({ message: "Gagal menghapus." });
       } else {
-        res.status(200).send("Customer deleted.");
+        res.status(200).send("Berhasil dihapus.");
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error deleting customer." });
+      res.status(500).send({ message: "Error dalam menghapus pelanggan." });
     });
 });
 

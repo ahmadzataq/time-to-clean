@@ -6,10 +6,10 @@ const ErrorPage = () => {
     <div>
       <div className="error-page text-center">
         <p>404 Error!</p>
-        <h1>Page Not Found</h1>
+        <h1>Halaman Tidak Ditemukan</h1>
         <br />
         <Link to="/" className="btn-primary">
-          Go To Dashboard
+          Kembali ke Dasbor
         </Link>
       </div>
     </div>

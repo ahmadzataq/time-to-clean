@@ -35,13 +35,13 @@ router.get("/", async (req, res) => {
     .sort({ _id: -1 })
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "No order found." });
+        res.status(404).send({ message: "Pesanan tidak ditemukan." });
       } else {
         res.status(200).send(data);
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error to find order." });
+      res.status(500).send({ message: "Error dalam mencari pesanan." });
     });
 });
 
@@ -51,13 +51,13 @@ router.get("/:id", async (req, res) => {
   await Orders.findById(id)
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "No order found." });
+        res.status(404).send({ message: "Pesanan tidak ditemukan." });
       } else {
         res.status(200).send(data);
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error to find order." });
+      res.status(500).send({ message: "Error dalam mencari pesanan." });
     });
 });
 
@@ -68,20 +68,20 @@ router.put("/:id", async (req, res) => {
   if (!req.body) {
     return res
       .status(400)
-      .send({ Message: "Data to update can not be empty." });
+      .send({ Message: "Data yang akan diupdate tidak boleh kosong." });
   }
   await Orders.findByIdAndUpdate(id, req.body, {
     useFindAndModify: false,
   })
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "Can not update." });
+        res.status(404).send({ message: "Gagal mengupdate." });
       } else {
-        res.send("Order updated.");
+        res.send("Berhasil diupdated.");
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error updatating order." });
+      res.status(500).send({ message: "Error dalam mengupdate pesanan." });
     });
 });
 
@@ -92,13 +92,13 @@ router.delete("/:id", async (req, res) => {
   await Orders.findByIdAndDelete(id)
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "Can not delete." });
+        res.status(404).send({ message: "Gagal menghapus." });
       } else {
-        res.status(200).send("Order deleted.");
+        res.status(200).send("Berhasil dihapus.");
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error deleting order." });
+      res.status(500).send({ message: "Error dalam menghapus pesanan." });
     });
 });
 
@@ -118,10 +118,10 @@ router.put("/:id/review", async (req, res) => {
         );
       }
     } else {
-      res.json({ message: "Order not found." });
+      res.json({ message: "Pesanan tidak ditemukan." });
     }
   } catch (error) {
-    res.json({ message: "Something wrong." });
+    res.json({ message: "Terjadi kesalahan." });
   }
 });
 

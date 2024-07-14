@@ -44,20 +44,20 @@ app.use("/users", express.static("uploads/users"));
 app.use("/customers", express.static("uploads/customers"));
 
 app.get("/", (req, res) => {
-  res.send("<h1>App is running...</h1>");
+  res.send("<h1>App is running</h1>");
 });
 
 // Router Not Found
 app.use((req, res, next) => {
   res.json({
-    message: "Router Not Found!",
+    message: "Router Tidak Ditemukan!",
   });
 });
 
 // Server Error
 app.use((err, req, res, next) => {
   res.json({
-    message: "Something broken!",
+    message: "Server Error!",
   });
 });
 

@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
     const email = req.body.email;
     const emailCheck = await Users.findOne({ email: email });
     if (emailCheck) {
-      res.json({ message: "Already registered." });
+      res.json({ message: "Sudah terdaftar." });
     } else {
       const filePath = "uploads/default/avatar.png";
       const avatar = Date.now() + "-avatar.png";
@@ -47,7 +47,7 @@ router.post("/", async (req, res) => {
           address: req.body.address,
         });
         await newUser.save().then((data) => {
-          res.json({ message: "User added successfull." });
+          res.json({ message: "User berhasil ditambahkan." });
         });
       });
     }
@@ -62,13 +62,13 @@ router.get("/", async (req, res) => {
     .sort({ _id: -1 })
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "No user found." });
+        res.status(404).send({ message: "User tidak ditemukan." });
       } else {
         res.status(200).send(data);
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error to find user." });
+      res.status(500).send({ message: "Error dalam mencari user." });
     });
 });
 
@@ -78,13 +78,13 @@ router.get("/:id", async (req, res) => {
   await Users.findById(id)
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "No user found." });
+        res.status(404).send({ message: "User tidak ditemukan." });
       } else {
         res.status(200).send(data);
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error to find user." });
+      res.status(500).send({ message: "Error dalam mencari user." });
     });
 });
 
@@ -93,7 +93,7 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
   const id = req.params.id;
 
   if (!req.body) {
-    return res.json({ Message: "Data to update can not be empty." });
+    return res.json({ Message: "Data yang akan diupdate tidak boleh kosong." });
   }
 
   // If no new thumbnail found.
@@ -116,23 +116,23 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
               )
                 .then((data) => {
                   if (!data) {
-                    res.json({ message: "Can not update." });
+                    res.json({ message: "Gagal mengupdate." });
                   } else {
-                    res.json({ message: "Updated successfull." });
+                    res.json({ message: "Berhasil mengupdate." });
                   }
                 })
                 .catch((err) => {
                   res
                     .status(500)
-                    .send({ message: "Error updatating customer." });
+                    .send({ message: "Error dalam mengupdate pelanggan." });
                 });
             });
           } else {
-            res.json({ message: "Old password doesn't match." });
+            res.json({ message: "Password tidak cocok." });
           }
         });
       } else {
-        res.json({ message: "Something wrong." });
+        res.json({ message: "Terjadi kesalahan." });
       }
     });
   } else if (req.body.thumb) {
@@ -141,13 +141,13 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
     })
       .then((data) => {
         if (!data) {
-          res.json({ message: "Can not update." });
+          res.json({ message: "Gagal mengupdate." });
         } else {
-          res.json({ data, message: "User updated." });
+          res.json({ data, message: "Berhasil mengupdate." });
         }
       })
       .catch((err) => {
-        res.json({ message: "Error updatating user." });
+        res.json({ message: "Error dalam mengupdate user." });
       });
   } else if (req.file.filename) {
     // Delete old thumbnail
@@ -164,13 +164,13 @@ router.put("/:id", upload.single("thumb"), async (req, res) => {
     )
       .then((data) => {
         if (!data) {
-          res.json({ message: "Can not update." });
+          res.json({ message: "Gagal mengupdate." });
         } else {
-          res.json({ message: "Update successfull." });
+          res.json({ message: "Berhasil mengupdate." });
         }
       })
       .catch((err) => {
-        res.json({ message: "Error updatating user." });
+        res.json({ message: "Error dalam mengupdate user." });
       });
   }
 });
@@ -197,13 +197,13 @@ router.delete("/:id", async (req, res) => {
   await Users.findByIdAndDelete(id)
     .then((data) => {
       if (!data) {
-        res.status(404).send({ message: "Can not delete." });
+        res.status(404).send({ message: "Gagal menghapus." });
       } else {
-        res.status(200).send("User deleted.");
+        res.status(200).send("Berhasil menghapus.");
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error deleting user." });
+      res.status(500).send({ message: "Error dalam menghapus user." });
     });
 });
 

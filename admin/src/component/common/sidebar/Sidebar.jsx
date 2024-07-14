@@ -38,7 +38,7 @@ const Sidebar = () => {
                   }}
                   className="nav-link sidebar-item"
                 >
-                  <i className="ri-logout-circle-r-line"></i> Logout
+                  <i className="ri-logout-circle-r-line"></i> Keluar
                 </NavLink>
               </li>
             </ul>

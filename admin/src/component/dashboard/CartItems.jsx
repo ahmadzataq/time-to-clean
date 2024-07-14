@@ -24,7 +24,7 @@ const CartItems = () => {
         <Link to="/orders">
           <div className="single-card">
             <div className="card-content">
-              <h4>Total Orders</h4>
+              <h4>Total Pesanan</h4>
               <span>{orders.length}+</span>
             </div>
             <span className="card-icon">
@@ -36,7 +36,7 @@ const CartItems = () => {
         <Link to="/complete-orders">
           <div className="single-card">
             <div className="card-content">
-              <h4>Complete Orders</h4>
+              <h4>Pesanan Selesai</h4>
               <span>{completeOrders.length}+</span>
             </div>
             <span className="card-icon">
