@@ -18,12 +18,12 @@ const OrderDetails = () => {
       setitems(data.items);
     };
     fatchOrder();
-  }, [order]);
+  }, [id]);
 
   // CANCEL ORDER
   const deleteHandler = () => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -36,7 +36,7 @@ const OrderDetails = () => {
           .then((response) => {
             Swal.fire({
               icon: "success",
-              text: "Order Celceled.",
+              text: "Pesanan dibatalkan.",
               showConfirmButton: false,
               timer: 1000,
             });
@@ -46,7 +46,7 @@ const OrderDetails = () => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Order deleted field!",
+              text: "Gagal menghapus!",
             });
           });
       }
@@ -56,7 +56,7 @@ const OrderDetails = () => {
   // ACCEPT ORDER
   const acceptHandler = () => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -85,7 +85,7 @@ const OrderDetails = () => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Order update failed!",
+              text: "Gagal mengupdate!",
             });
           });
       }
@@ -95,7 +95,7 @@ const OrderDetails = () => {
   // Payment Handler
   const paymentHandler = () => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",

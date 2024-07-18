@@ -20,7 +20,7 @@ const Order = () => {
   } = useCart();
   const claerCart = () => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -96,7 +96,7 @@ const Order = () => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Something wrong.",
+              text: "Terjadi kesalahan.",
             });
           });
       } else {
@@ -105,7 +105,7 @@ const Order = () => {
     } else {
       Swal.fire({
         icon: "error",
-        text: "Please, select any food.",
+        text: "Mohon pilih layanan apa saja.",
       });
     }
   };
@@ -304,7 +304,7 @@ const Order = () => {
               {!isEmpty && (
                 <>
                   <tr className="bold">
-                    <td colSpan="2">Sub-Total</td>
+                    <td colSpan="2">Total</td>
                     <td>{totalItems}</td>
                     <td>Rp. {cartTotal}</td>
                     <td>

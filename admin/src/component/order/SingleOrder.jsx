@@ -42,7 +42,7 @@ const SingleOrder = () => {
       .then((response) => {
         Swal.fire({
           icon: "success",
-          text: "Order updated successfull.",
+          text: "Sukses mengupdate pesanan.",
           showConfirmButton: false,
           timer: 500,
         });
@@ -52,7 +52,7 @@ const SingleOrder = () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Order update field!",
+          text: "Gagal mengupdate!",
         });
       });
   };
@@ -60,7 +60,7 @@ const SingleOrder = () => {
   // DELETE ORDER
   const deleteHandler = () => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -73,7 +73,7 @@ const SingleOrder = () => {
           .then((response) => {
             Swal.fire({
               icon: "success",
-              text: "Order deleted.",
+              text: "Pesanan dihapus.",
               showConfirmButton: false,
               timer: 500,
             });
@@ -83,7 +83,7 @@ const SingleOrder = () => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Order deleted field!",
+              text: "Gagal menghapus!",
             });
           });
       }

@@ -58,7 +58,7 @@ const Settings = () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Update field!",
+          text: "Gagal mengupdate!",
         });
       });
   };

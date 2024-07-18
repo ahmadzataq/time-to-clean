@@ -21,7 +21,6 @@ import {
   Row,
 } from "reactstrap";
 
-import houseDress from "../images/household.png";
 import manDress from "../images/man.png";
 import womanDress from "../images/woman.png";
 
@@ -96,8 +95,6 @@ const washAndIronWoman = [
   },
 ];
 
-const washAndIronHouse = [
-];
 
 const DeepClean = () => {
   // ADD-TO-CART
@@ -107,7 +104,7 @@ const DeepClean = () => {
     addItem(item);
     Swal.fire({
       icon: "success",
-      text: item.name + " Added.",
+      text: item.name + " Dimasukkan ke keranjang.",
       showConfirmButton: false,
       timer: 1000,
     });

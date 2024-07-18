@@ -20,7 +20,7 @@ const Order = () => {
   // DELETE ORDER
   const deleteHandler = (id) => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -33,7 +33,7 @@ const Order = () => {
           .then((response) => {
             Swal.fire({
               icon: "success",
-              text: "Order Deleted.",
+              text: "Pesanan dihapus.",
               showConfirmButton: false,
               timer: 1000,
             });
@@ -42,7 +42,7 @@ const Order = () => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Order deleted field!",
+              text: "Gagal menghapus!",
             });
           });
       }

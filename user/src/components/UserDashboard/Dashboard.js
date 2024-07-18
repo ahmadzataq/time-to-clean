@@ -10,14 +10,14 @@ import Swal from "sweetalert2";
 const Dashboard = () => {
   // GET CUSTOMER DETAILS
   const id = localStorage.getItem("cID");
-  const [customer, setCustomer] = useState({});
+  const [setCustomer] = useState({});
   useEffect(() => {
     const fatchCustomer = async () => {
       const { data } = await axios.get(`/api/admin/customers/${id}`);
       setCustomer(data);
     };
     fatchCustomer();
-  }, [customer]);
+  }, [id, setCustomer]);
 
   // GET ORDERS
   const [orders, setOrders] = useState([]);
@@ -31,12 +31,12 @@ const Dashboard = () => {
       setOrders(fatchCustomerOrders);
     };
     fatchOrders();
-  }, [orders]);
+  }, [customer_id]);
 
   // CANCEL ORDER
   const deleteHandler = (id) => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -48,7 +48,7 @@ const Dashboard = () => {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Order deleted field!",
+            text: "Gagal menghapus!",
           });
         });
       }
@@ -58,7 +58,7 @@ const Dashboard = () => {
   // ACCEPT ORDER
   const acceptHandler = (id) => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -87,7 +87,7 @@ const Dashboard = () => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Order update failed!",
+              text: "Gagal mengupdate!",
             });
           });
       }

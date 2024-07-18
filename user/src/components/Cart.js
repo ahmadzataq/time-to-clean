@@ -16,7 +16,7 @@ const Cart = () => {
   } = useCart();
   const claerCart = () => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",

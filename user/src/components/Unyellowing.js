@@ -21,7 +21,6 @@ import {
   Row,
 } from "reactstrap";
 
-import houseDress from "../images/household.png";
 import manDress from "../images/man.png";
 import womanDress from "../images/woman.png";
 
@@ -57,8 +56,6 @@ const IronAndFoldWoman = [
 
 ];
 
-const IronAndFoldHouse = [
-];
 const Unyellowing = () => {
   // ADD-TO-CART
   const { addItem } = useCart();
@@ -67,7 +64,7 @@ const Unyellowing = () => {
     addItem(item);
     Swal.fire({
       icon: "success",
-      text: item.name + " Added.",
+      text: item.name + " Dimasukkan ke keranjang.",
       showConfirmButton: false,
       timer: 1000,
     });

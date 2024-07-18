@@ -20,7 +20,7 @@ const ProfilePic = () => {
       setThumb(data.thumb);
     };
     fatchCustomer();
-  }, [currentThumb]);
+  }, [id]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -45,7 +45,7 @@ const ProfilePic = () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Update field!",
+          text: "Gagal mengupdate!",
         });
       });
   };

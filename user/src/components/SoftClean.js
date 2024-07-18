@@ -21,7 +21,6 @@ import {
   Row,
 } from "reactstrap";
 
-import houseDress from "../images/household.png";
 import manDress from "../images/man.png";
 import womanDress from "../images/woman.png";
 
@@ -102,9 +101,6 @@ const WashAndFoldWoman = [
 
 ];
 
-const WashAndFoldHouse = [
-  
-];
 const SoftClean = () => {
   // ADD-TO-CART
   const { addItem } = useCart();
@@ -113,7 +109,7 @@ const SoftClean = () => {
     addItem(item);
     Swal.fire({
       icon: "success",
-      text: item.name + " Added.",
+      text: item.name + " Dimasukkan ke keranjang.",
       showConfirmButton: false,
       timer: 1000,
     });

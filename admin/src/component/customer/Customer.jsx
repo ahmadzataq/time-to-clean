@@ -20,7 +20,7 @@ const Customer = () => {
   // CUSTOMER DELETE
   const deleteHandler = (id, thumb) => {
     Swal.fire({
-      text: "Are you sure?",
+      text: "Apakah anda yakin?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -35,7 +35,7 @@ const Customer = () => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Customer deleted field!",
+              text: "Gagal menghapus!",
             });
           });
       }
