@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
     const email = req.body.email;
     const emailCheck = await Customers.findOne({ email: email });
     if (emailCheck) {
-      res.json({ message: "Email sudah terdaftar." });
+      return res.json({ message: "Email sudah terdaftar." });
     } else {
       const filePath = "uploads/default/avatar.png";
       const avatar = Date.now() + "-avatar.png";
@@ -47,7 +47,6 @@ router.post("/", async (req, res) => {
           address: req.body.address,
         });
         await newCustomer.save().then((user) => {
-          // res.json({ data, message: "Registration successfull." });
           const payload = {
             id: user._id,
             email: user.email,
@@ -59,7 +58,7 @@ router.post("/", async (req, res) => {
 
           return res.status(200).send({
             success: true,
-            message: "Berhasil daftar..",
+            message: "Berhasil daftar.",
             token: "Bearer " + token,
             id: user._id,
             name: user.name,
@@ -68,9 +67,10 @@ router.post("/", async (req, res) => {
       });
     }
   } catch (error) {
-    throw new Error(error);
+    return res.status(500).send({ message: "Terjadi kesalahan." });
   }
 });
+
 
 // ALL CUSTOMER
 router.get("/", async (req, res) => {

@@ -41,7 +41,7 @@ const Login = () => {
           },
         })
         .then((user) => {
-          if (user.data.message === "Registration successfull.") {
+          if (user.data.message === "Berhasil daftar.") {
             // Set token
             localStorage.setItem("cToken", user.data.token);
             localStorage.setItem("cID", user.data.id);
@@ -53,7 +53,7 @@ const Login = () => {
               timer: 500,
             });
             window.location.href = "/customer";
-          } else if (user.data.message === "Already registered.") {
+          } else if (user.data.message === "Email sudah terdaftar.") {
             Swal.fire({
               icon: "error",
               title: "Oops...",
@@ -65,13 +65,13 @@ const Login = () => {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Something wrong.",
+            text: "Terjadi kesalahan.",
           });
         });
     } else {
       Swal.fire({
         icon: "error",
-        text: "Confirm password doesn't match.",
+        text: "Password tidak cocok.",
       });
     }
   };
@@ -93,17 +93,17 @@ const Login = () => {
         },
       })
       .then((user) => {
-        if (user.data.message === "Email doesn't exist.") {
+        if (user.data.message === "Email tidak terdaftar.") {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Email doesn't exist.",
+            text: "Email tidak terdaftar.",
           });
-        } else if (user.data.message === "Password doesn't match.") {
+        } else if (user.data.message === "Password tidak cocok.") {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Password doesn't match.",
+            text: "Password tidak cocok.",
           });
         } else {
           // Set token
@@ -117,7 +117,7 @@ const Login = () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something wrong.",
+          text: "Terjadi Kesalahan.",
         });
       });
   };
@@ -182,7 +182,7 @@ const Login = () => {
                 className="title"
                 style={{ fontFamily: "Handlee, cursive", color: "#1665a0" }}
               >
-                Sign up
+                Daftar
               </h2>
 
               <div className="input-field">
@@ -194,7 +194,7 @@ const Login = () => {
                   autoComplete="off"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder=" Your Name"
+                  placeholder=" Nama"
                 />
               </div>
 
@@ -207,7 +207,7 @@ const Login = () => {
                   autoComplete="off"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder=" Your Email"
+                  placeholder=" Email"
                 />
               </div>
 
@@ -220,7 +220,7 @@ const Login = () => {
                   autoComplete="off"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Your Phone Number"
+                  placeholder=" Nomor Telepon"
                 />
               </div>
               <div className="input-field">
@@ -232,7 +232,7 @@ const Login = () => {
                   autoComplete="off"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
+                  placeholder=" Password"
                 />
               </div>
               <div className="input-field">
@@ -244,7 +244,7 @@ const Login = () => {
                   autoComplete="off"
                   value={conPassword}
                   onChange={(e) => setConPassword(e.target.value)}
-                  placeholder="Confirm Password"
+                  placeholder=" Konfirmasi Password"
                 />
               </div>
               <div className="input-field">
@@ -259,7 +259,7 @@ const Login = () => {
                   autoComplete="off"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  placeholder=" Your Address"
+                  placeholder=" Alamat"
                 />
               </div>
 

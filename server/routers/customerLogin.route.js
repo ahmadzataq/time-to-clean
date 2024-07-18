@@ -30,15 +30,15 @@ router.post("/", async (req, res) => {
               name: user.name,
             });
           } else {
-            res.json({ message: "Password tidak cocok." });
+            return res.json({ message: "Password tidak cocok." });
           }
         });
       } else {
-        res.json({ message: "Email tidak terdaftar." });
+        return res.json({ message: "Email tidak terdaftar." });
       }
     });
   } catch (error) {
-    throw new Error(error);
+    return res.status(500).send({ message: "Terjadi kesalahan." });
   }
 });
 export default router;
