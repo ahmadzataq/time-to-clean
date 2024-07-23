@@ -9,27 +9,29 @@ import Profile from "./Profile";
 const Dashboard = () => {
   // GET CUSTOMER DETAILS
   const id = localStorage.getItem("cID");
-  const [setCustomer] = useState({});
+  const [customer, setCustomer] = useState({});
   useEffect(() => {
-    const fatchCustomer = async () => {
+    const fetchCustomer = async () => {
       const { data } = await axios.get(`https://time-to-clean-api.vercel.app/customers/${id}`);
       setCustomer(data);
     };
-    fatchCustomer();
-  }, [id, setCustomer]);
+    fetchCustomer();
+  }, [id]);
 
   // GET ORDERS
   const [orders, setOrders] = useState([]);
   const customer_id = localStorage.getItem("cID");
   useEffect(() => {
-    const fatchOrders = async () => {
+    const fetchOrders = async () => {
       const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders`);
-      const fatchCustomerOrders = data.filter((curData) => {
-        return curData.customer_id === customer_id;
-      });
-      setOrders(fatchCustomerOrders);
+      if (Array.isArray(data)) {
+        const customerOrders = data.filter((curData) => curData.customer_id === customer_id);
+        setOrders(customerOrders);
+      } else {
+        console.error("Data received is not an array:", data);
+      }
     };
-    fatchOrders();
+    fetchOrders();
   }, [customer_id]);
 
   if (!localStorage.getItem("cToken")) {
@@ -49,62 +51,66 @@ const Dashboard = () => {
               <h3>Tabel Pemesanan</h3>
               <div className="order-items">
                 <table>
-                  <tr>
-                    <th>Id</th>
-                    <th>Item</th>
-                    <th>Qty</th>
-                    <th>Total Harga</th>
-                    <th>Pembayaran</th>
-                    <th>Status</th>
-                    <th>Tanggal Pemesanan</th>
-                    <th>Tanggal Diterima</th>
-                    <th>Tanggal Estimasi</th>
-                  </tr>
-                  {orders.length === 0 ? (
+                  <thead>
                     <tr>
-                      <td className="text-center" colSpan="10">
-                        Kosong!
-                      </td>
+                      <th>Id</th>
+                      <th>Item</th>
+                      <th>Qty</th>
+                      <th>Total Harga</th>
+                      <th>Pembayaran</th>
+                      <th>Status</th>
+                      <th>Tanggal Pemesanan</th>
+                      <th>Tanggal Diterima</th>
+                      <th>Tanggal Estimasi</th>
                     </tr>
-                  ) : (
-                    orders.map((item, index) => (
-                      <tr key={index}>
-                        <td>
-                          <Link to={"/customer/dashboard/" + item._id}>
-                            {item._id.slice(0, 10)}...
-                          </Link>
-                        </td>
-                        <td>{item.totalItems}</td>
-                        <td>{item.total_quantity}</td>
-                        <td>Rp. {item.total_price}</td>
-                        <td>{item.payment}</td>
-                        <td>
-                          <span
-                            className={
-                              (item.status === "Dipesan" && "btn-order") ||
-                              (item.status === "Diterima" && "btn-on-delv") ||
-                              (item.status === "Diproses" && "btn-on-delv") ||
-                              (item.status === "Batal" && "btn-cncl") ||
-                              (item.status === "Selesai" && "btn-delv")
-                            }
-                          >
-                            {item.status}
-                          </span>
-                        </td>
-                        <td>{moment(item.order_date).format("lll")}</td>
-                        <td>
-                          {item.accept_time
-                            ? moment(item.accept_time).format("lll")
-                            : "-"}
-                        </td>
-                        <td>
-                          {item.expTime === "0"
-                            ? "-"
-                            : moment(item.expTime).format("lll")}
+                  </thead>
+                  <tbody>
+                    {orders.length === 0 ? (
+                      <tr>
+                        <td className="text-center" colSpan="10">
+                          Kosong!
                         </td>
                       </tr>
-                    ))
-                  )}
+                    ) : (
+                      orders.map((item, index) => (
+                        <tr key={index}>
+                          <td>
+                            <Link to={"/customer/dashboard/" + item._id}>
+                              {item._id.slice(0, 10)}...
+                            </Link>
+                          </td>
+                          <td>{item.totalItems}</td>
+                          <td>{item.total_quantity}</td>
+                          <td>Rp. {item.total_price}</td>
+                          <td>{item.payment}</td>
+                          <td>
+                            <span
+                              className={
+                                (item.status === "Dipesan" && "btn-order") ||
+                                (item.status === "Diterima" && "btn-on-delv") ||
+                                (item.status === "Diproses" && "btn-on-delv") ||
+                                (item.status === "Batal" && "btn-cncl") ||
+                                (item.status === "Selesai" && "btn-delv")
+                              }
+                            >
+                              {item.status}
+                            </span>
+                          </td>
+                          <td>{moment(item.order_date).format("lll")}</td>
+                          <td>
+                            {item.accept_time
+                              ? moment(item.accept_time).format("lll")
+                              : "-"}
+                          </td>
+                          <td>
+                            {item.expTime === "0"
+                              ? "-"
+                              : moment(item.expTime).format("lll")}
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
                 </table>
               </div>
             </div>
