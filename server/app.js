@@ -15,7 +15,7 @@ const app = express();
 const corsOptions = {
   origin: ['https://timetoclean.vercel.app', 'https://timetoclean-admin.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
-  credentials: true
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
