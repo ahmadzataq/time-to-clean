@@ -23,12 +23,16 @@ const Dashboard = () => {
   const customer_id = localStorage.getItem("cID");
   useEffect(() => {
     const fetchOrders = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders`);
-      if (Array.isArray(data)) {
-        const customerOrders = data.filter((curData) => curData.customer_id === customer_id);
-        setOrders(customerOrders);
-      } else {
-        console.error("Data received is not an array:", data);
+      try {
+        const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders`);
+        if (Array.isArray(data)) {
+          const customerOrders = data.filter((curData) => curData.customer_id === customer_id);
+          setOrders(customerOrders);
+        } else {
+          console.error("Data received is not an array:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching orders:", error);
       }
     };
     fetchOrders();
