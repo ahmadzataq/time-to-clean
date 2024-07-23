@@ -10,7 +10,7 @@ const CompleteOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fatchOrders = async () => {
-      const { data } = await axios.get("/api/admin/orders"
+      const { data } = await axios.get("https://time-to-clean-api.vercel.app/orders"
       );
       const completeOrder = data.filter((curData) => {
         return curData.status.toLowerCase() === "selesai";

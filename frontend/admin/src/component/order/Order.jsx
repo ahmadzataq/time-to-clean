@@ -11,7 +11,7 @@ const Order = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fatchOrders = async () => {
-      const { data } = await axios.get("/api/admin/orders");
+      const { data } = await axios.get("https://time-to-clean-api.vercel.app/orders");
       setOrders(data);
     };
     fatchOrders();
@@ -29,7 +29,7 @@ const Order = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`/api/admin/orders/${id}`)
+          .delete(`https://time-to-clean-api.vercel.app/orders/${id}`)
           .then((response) => {
             Swal.fire({
               icon: "success",
