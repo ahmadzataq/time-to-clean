@@ -26,12 +26,12 @@ const Dashboard = () => {
       try {
         const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders`);
         console.log("Data received:", data); // Tambahkan log ini
-        const ordersData = data.orders || []; 
-        if (Array.isArray(data)) {
-          const customerOrders = data.filter((curData) => curData.customer_id === customer_id);
+        const ordersData = data.orders || []; // Sesuaikan dengan struktur respons yang benar
+        if (Array.isArray(ordersData)) {
+          const customerOrders = ordersData.filter((curData) => curData.customer_id === customer_id);
           setOrders(customerOrders);
         } else {
-          console.error("Data received is not an array:", data);
+          console.error("Data received is not an array:", ordersData);
         }
       } catch (error) {
         console.error("Error fetching orders:", error);
