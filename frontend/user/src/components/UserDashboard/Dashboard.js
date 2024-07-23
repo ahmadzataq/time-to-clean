@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import Profile from "./Profile";
-import Swal from "sweetalert2";
 
 const Dashboard = () => {
   // GET CUSTOMER DETAILS
@@ -32,67 +31,6 @@ const Dashboard = () => {
     };
     fatchOrders();
   }, [customer_id]);
-
-  // CANCEL ORDER
-  const deleteHandler = (id) => {
-    Swal.fire({
-      text: "Apakah anda yakin?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios.delete(`/api/admin/orders/${id}`).catch((error) => {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Gagal menghapus!",
-          });
-        });
-      }
-    });
-  };
-
-  // ACCEPT ORDER
-  const acceptHandler = (id) => {
-    Swal.fire({
-      text: "Apakah anda yakin?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Accept",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        let updateData = {
-          status: "Selesai",
-        };
-        axios
-          .put(`/api/admin/orders/${id}`, updateData, {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-          .then((response) => {
-            Swal.fire({
-              icon: "success",
-              text: "Pesanan Diterima.",
-              showConfirmButton: false,
-              timer: 1000,
-            });
-          })
-          .catch((error) => {
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: "Gagal mengupdate!",
-            });
-          });
-      }
-    });
-  };
 
   if (!localStorage.getItem("cToken")) {
     window.location.href = "/login";
@@ -121,7 +59,6 @@ const Dashboard = () => {
                     <th>Tanggal Pemesanan</th>
                     <th>Tanggal Diterima</th>
                     <th>Tanggal Estimasi</th>
-                    <th>Action</th>
                   </tr>
                   {orders.length === 0 ? (
                     <tr>
@@ -158,38 +95,12 @@ const Dashboard = () => {
                         <td>
                           {item.accept_time
                             ? moment(item.accept_time).format("lll")
-                            : "NaN"}
+                            : "-"}
                         </td>
                         <td>
                           {item.expTime === "0"
-                            ? "NaN"
+                            ? "-"
                             : moment(item.expTime).format("lll")}
-                        </td>
-                        <td>
-                          {(item.status === "Diproses" ||
-                            item.status === "Pickup") && (
-                            <Link
-                              className="btn-small"
-                              onClick={() => acceptHandler(item._id)}
-                            >
-                              ACCEPT
-                            </Link>
-                          )}
-                          {(item.status === "Selesai" ||
-                            item.status === "Batal" ||
-                            item.status === "Diterima") && (
-                            <Link className="btn-small disableLink">
-                              ACCEPT
-                            </Link>
-                          )}
-                          {item.status === "Dipesan" && (
-                            <Link
-                              onClick={() => deleteHandler(item._id)}
-                              className="btn-small danger-btn"
-                            >
-                              CANCEL
-                            </Link>
-                          )}
                         </td>
                       </tr>
                     ))
