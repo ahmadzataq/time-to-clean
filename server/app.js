@@ -16,6 +16,7 @@ const corsOptions = {
   origin: 'https://timetoclean.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'], 
+  credentials: true
 };
 
 app.use(cors(corsOptions));
