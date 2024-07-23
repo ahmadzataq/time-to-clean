@@ -45,7 +45,7 @@ const Customer = () => {
   return (
     <>
       <section className="customer content">
-        <Title title="Customers" />
+        <Title title="Pelanggan" />
         <div className="customer-items">
           <table>
             <tr>

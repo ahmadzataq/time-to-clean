@@ -23,7 +23,7 @@ const CompleteOrders = () => {
   return (
     <>
       <section className="order content">
-        <Title title="Complete Orders" />
+        <Title title="Pesanan Selesai" />
         <div className="order-items">
           <table>
             <tr>

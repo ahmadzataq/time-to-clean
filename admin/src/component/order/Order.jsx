@@ -52,7 +52,7 @@ const Order = () => {
   return (
     <>
       <section className="order content">
-        <Title title="Orders" />
+        <Title title="Pesanan" />
         <div className="order-items">
           <table>
             <tr>

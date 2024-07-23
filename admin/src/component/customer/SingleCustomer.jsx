@@ -70,7 +70,7 @@ const SingleCustomer = () => {
   return (
     <>
       <section className="single-customer content">
-        <Title title="Customer Profile" />
+        <Title title="Profil Pelanggan" />
         <div className="profile-items">
           <div className="left">
             <div class="card">

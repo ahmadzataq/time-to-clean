@@ -16,7 +16,7 @@ const Sidebar = () => {
       <section className="sidebar">
         <div className="sidebar-top">
           <div className="img">
-            {/* <h3>LAUNDRYWALA</h3> */}
+            {/* <h3>TIMETOCLEAN</h3> */}
             <Link to="/" title="Home">
               <img
                 src={"default/logo-dashboard.png"}

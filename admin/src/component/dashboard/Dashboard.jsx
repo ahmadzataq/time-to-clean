@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <>
       <section className="dashboard content">
-        <Title title="Dashboard" />
+        <Title title="Dasbor" />
         <div className="dashboard-wrapper">
           <CartItems />
         </div>
