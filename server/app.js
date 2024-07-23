@@ -12,7 +12,14 @@ dotenv.config();
 connectDB();
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://timetoclean.vercel.app/',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'], 
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

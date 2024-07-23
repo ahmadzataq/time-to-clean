@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [setCustomer] = useState({});
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`/api/admin/customers/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/customers/${id}`);
       setCustomer(data);
     };
     fatchCustomer();
@@ -23,7 +23,7 @@ const Dashboard = () => {
   const customer_id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchOrders = async () => {
-      const { data } = await axios.get(`/api/admin/orders`);
+      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders`);
       const fatchCustomerOrders = data.filter((curData) => {
         return curData.customer_id === customer_id;
       });

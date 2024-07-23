@@ -23,7 +23,7 @@ const Settings = () => {
   const id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`/api/admin/customers/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/customers/${id}`);
       setName(data.name);
       setPhone(data.phone);
       setAddress(data.address);
@@ -41,7 +41,7 @@ const Settings = () => {
       thumb: currentThumb,
     };
     axios
-      .put(`/api/admin/customers/${id}?cthumb=${currentThumb}`, updateData, {
+      .put(`https://time-to-clean-api.vercel.app/customers/${id}?cthumb=${currentThumb}`, updateData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

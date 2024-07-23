@@ -47,7 +47,7 @@ const Order = () => {
   const id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`/api/admin/customers/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/customers/${id}`);
       setName(data.name);
       setEmail(data.email);
       setPhone(data.phone);
@@ -77,7 +77,7 @@ const Order = () => {
           total_price: cartTotal,
         };
         axios
-          .post(`/api/admin/orders`, data, {
+          .post(`https://time-to-clean-api.vercel.app/orders`, data, {
             headers: {
               "Content-Type": "application/json",
             },

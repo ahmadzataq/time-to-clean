@@ -10,7 +10,7 @@ const Profile = () => {
   const [customer, setCustomer] = useState({});
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`/api/admin/customers/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/customers/${id}`);
       setCustomer(data);
     };
     fatchCustomer();

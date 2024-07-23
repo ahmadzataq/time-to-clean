@@ -13,7 +13,7 @@ const OrderDetails = () => {
   const [items, setitems] = useState([]);
   useEffect(() => {
     const fatchOrder = async () => {
-      const { data } = await axios.get(`/api/admin/orders/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders/${id}`);
       setOrder(data);
       setitems(data.items);
     };
@@ -32,7 +32,7 @@ const OrderDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`/api/admin/orders/${id}`)
+          .delete(`https://time-to-clean-api.vercel.app/orders/${id}`)
           .then((response) => {
             Swal.fire({
               icon: "success",
@@ -68,7 +68,7 @@ const OrderDetails = () => {
           status: "Selesai",
         };
         axios
-          .put(`/api/admin/orders/${id}`, updateData, {
+          .put(`https://time-to-clean-api.vercel.app/orders/${id}`, updateData, {
             headers: {
               "Content-Type": "application/json",
             },
@@ -107,7 +107,7 @@ const OrderDetails = () => {
           pendingPayment: "Sent",
         };
         axios
-          .put(`/api/admin/orders/${id}`, updateData, {
+          .put(`https://time-to-clean-api.vercel.app/orders/${id}`, updateData, {
             headers: {
               "Content-Type": "application/json",
             },
