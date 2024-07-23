@@ -24,25 +24,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-// Menambahkan header CORS secara manual (jika diperlukan)
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://timetoclean.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  next();
-});
-
-// Log request dan response
-app.use((req, res, next) => {
-  console.log(`Request: ${req.method} ${req.url}`);
-  console.log('Request Headers:', req.headers);
-  res.on('finish', () => {
-    console.log('Response Headers:', res.getHeaders());
-  });
-  next();
-});
-
 // USER API
 app.use("/api/admin/users", userRoute);
 app.use("/api/admin/users/:id", userRoute);
