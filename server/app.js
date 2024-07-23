@@ -40,7 +40,7 @@ app.use("/api/admin/orders/:id", orderRoute);
 app.use("/api/admin/revenue", revenueRoute);
 
 // CUSTOMER LOGIN API
-app.use("/api/admin/customerlogin", customerLogin);
+app.use("/api/admin/login", customerLogin);
 
 // ADMIN LOGIN API
 app.use("/api/admin/adminlogin", adminLogin);
