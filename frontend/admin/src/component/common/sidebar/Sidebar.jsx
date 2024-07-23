@@ -8,7 +8,7 @@ const Sidebar = () => {
   const logout = () => {
     localStorage.removeItem("aToken");
     localStorage.removeItem("aID");
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "https://timetoclean.vercel.app";
   };
 
   return (
