@@ -13,7 +13,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-  origin: ['https://time-to-clean-admin.vercel.app', 'https://time-to-clean.vercel.app'],
+  origin: ['https://time-to-clean-admin.vercel.app', 'https://time-to-clean-production.up.railway.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
   allowedHeaders: ['Content-Type', 'Authorization']
 };
