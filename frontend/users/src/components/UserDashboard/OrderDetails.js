@@ -13,7 +13,7 @@ const OrderDetails = () => {
   const [items, setitems] = useState([]);
   useEffect(() => {
     const fatchOrder = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/orders/${id}`);
       setOrder(data);
       setitems(data.items);
     };
@@ -32,7 +32,7 @@ const OrderDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://time-to-clean-api.vercel.app/orders/${id}`)
+          .delete(`https://time-to-clean-api.up.railway.app/api/admin/orders/${id}`)
           .then((response) => {
             Swal.fire({
               icon: "success",
@@ -68,7 +68,7 @@ const OrderDetails = () => {
           status: "Selesai",
         };
         axios
-          .put(`https://time-to-clean-api.vercel.app/orders/${id}`, updateData, {
+          .put(`https://time-to-clean-api.up.railway.app/api/admin/orders/${id}`, updateData, {
             headers: {
               "Content-Type": "application/json",
             },
@@ -107,7 +107,7 @@ const OrderDetails = () => {
           pendingPayment: "Sent",
         };
         axios
-          .put(`https://time-to-clean-api.vercel.app/orders/${id}`, updateData, {
+          .put(`https://time-to-clean-api.up.railway.app/api/admin/orders/${id}`, updateData, {
             headers: {
               "Content-Type": "application/json",
             },

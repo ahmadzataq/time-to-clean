@@ -16,7 +16,7 @@ const ProfilePic = () => {
   const id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/customers/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/customers/${id}`);
       setThumb(data.thumb);
     };
     fatchCustomer();
@@ -28,7 +28,7 @@ const ProfilePic = () => {
       thumb: document.querySelector("#thumb").files[0],
     };
     axios
-      .put(`https://time-to-clean-api.vercel.app/customers/${id}?cthumb=${currentThumb}`, updateData, {
+      .put(`https://time-to-clean-api.up.railway.app/api/admin/customers/${id}?cthumb=${currentThumb}`, updateData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [customer, setCustomer] = useState({});
   useEffect(() => {
     const fetchCustomer = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/customers/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/customers/${id}`);
       setCustomer(data);
     };
     fetchCustomer();
@@ -24,7 +24,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders`);
+        const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/orders`);
         console.log("Data received:", data); // Tambahkan log ini
         const ordersData = data.orders || []; // Sesuaikan dengan struktur respons yang benar
         if (Array.isArray(ordersData)) {
