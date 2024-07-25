@@ -14,7 +14,7 @@ const Login = () => {
       password,
     };
     axios
-      .post("https://time-to-clean-api.vercel.app/adminlogin", data, {
+      .post("https://time-to-clean-api.vercel.app/api/admin/adminlogin", data, {
         headers: {
           "Content-Type": "application/json",
         },
