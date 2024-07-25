@@ -1,5 +1,4 @@
 import express from "express";
-import cors from "cors";
 import userRoute from "./routers/users.route.js";
 import customerRoute from "./routers/customers.route.js";
 import orderRoute from "./routers/orders.route.js";
@@ -11,6 +10,8 @@ import connectDB from "./config/db.js";
 dotenv.config();
 connectDB();
 const app = express();
+
+import cors from "cors";
 
 const corsOptions = {
   origin: ['https://time-to-clean-admin.vercel.app'],
