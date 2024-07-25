@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const Dashboard = () => {
   // GET CUSTOMER DETAILS
   const id = localStorage.getItem("cID");
-  const [customer, setCustomer] = useState({});
+  const [setCustomer] = useState({});
   useEffect(() => {
     const fetchCustomer = async () => {
       const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/customers/${id}`);
