@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import Profile from "./Profile";
+import Swal from "sweetalert2";
 
 const Dashboard = () => {
   // GET CUSTOMER DETAILS
