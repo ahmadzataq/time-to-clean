@@ -17,7 +17,7 @@ const Dashboard = () => {
       setCustomer(data);
     };
     fetchCustomer();
-  }, []);
+  }, [id, setCustomer]);
 
   // GET ORDERS
   const [orders, setOrders] = useState([]);
