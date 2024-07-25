@@ -68,6 +68,7 @@ const Dashboard = () => {
                       <th>Tanggal Pemesanan</th>
                       <th>Tanggal Diterima</th>
                       <th>Tanggal Estimasi</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -113,7 +114,33 @@ const Dashboard = () => {
                               ? "-"
                               : moment(item.expTime).format("lll")}
                           </td>
-                        </tr>
+                          <td>
+                          {(item.status === "Diproses" ||
+                            item.status === "Diterima") && (
+                            <Link
+                              className="btn-small"
+                              onClick={() => acceptHandler(item._id)}
+                            >
+                              ACCEPT
+                            </Link>
+                          )}
+                          {(item.status === "Selesai" ||
+                            item.status === "Batal" ||
+                            item.status === "Diterima") && (
+                            <Link className="btn-small disableLink">
+                              ACCEPT
+                            </Link>
+                          )}
+                          {item.status === "Ordered" && (
+                            <Link
+                              onClick={() => deleteHandler(item._id)}
+                              className="btn-small danger-btn"
+                            >
+                              CANCEL
+                            </Link>
+                          )}
+                        </td>
+                        </tr>                    
                       ))
                     )}
                   </tbody>
