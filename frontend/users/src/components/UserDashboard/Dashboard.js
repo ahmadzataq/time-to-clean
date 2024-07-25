@@ -40,6 +40,67 @@ const Dashboard = () => {
     fetchOrders();
   }, [customer_id]);
 
+  // CANCEL ORDER
+  const deleteHandler = (id) => {
+    Swal.fire({
+      text: "Apakah anda yakin?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`/api/admin/orders/${id}`).catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Gagal menghapus!",
+          });
+        });
+      }
+    });
+  };
+
+  // ACCEPT ORDER
+  const acceptHandler = (id) => {
+    Swal.fire({
+      text: "Apakah anda yakin?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Accept",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let updateData = {
+          status: "Selesai",
+        };
+        axios
+          .put(`/api/admin/orders/${id}`, updateData, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+          .then((response) => {
+            Swal.fire({
+              icon: "success",
+              text: "Pesanan Diterima.",
+              showConfirmButton: false,
+              timer: 1000,
+            });
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Gagal mengupdate!",
+            });
+          });
+      }
+    });
+  };
+
   if (!localStorage.getItem("cToken")) {
     window.location.href = "/login";
   } else {
@@ -116,7 +177,7 @@ const Dashboard = () => {
                           </td>
                           <td>
                           {(item.status === "Diproses" ||
-                            item.status === "Diterima") && (
+                            item.status === "Pickup") && (
                             <Link
                               className="btn-small"
                               onClick={() => acceptHandler(item._id)}
@@ -131,7 +192,7 @@ const Dashboard = () => {
                               ACCEPT
                             </Link>
                           )}
-                          {item.status === "Ordered" && (
+                          {item.status === "Dipesan" && (
                             <Link
                               onClick={() => deleteHandler(item._id)}
                               className="btn-small danger-btn"
