@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import userRoute from "./routers/users.route.js";
 import customerRoute from "./routers/customers.route.js";
 import orderRoute from "./routers/orders.route.js";
@@ -11,8 +12,6 @@ dotenv.config();
 connectDB();
 const app = express();
 
-import cors from "cors";
-
 const corsOptions = {
   origin: ['https://time-to-clean-admin.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
@@ -20,6 +19,13 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://time-to-clean-admin.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.send();
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
