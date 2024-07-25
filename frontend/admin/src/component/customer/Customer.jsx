@@ -10,7 +10,7 @@ const Customer = () => {
   const [customers, setCustomers] = useState([]);
   useEffect(() => {
     const fatchCustomers = async () => {
-      const { data } = await axios.get("https://time-to-clean-api.vercel.app/customers"
+      const { data } = await axios.get("https://time-to-clean-api.up.railway.app/customers"
       );
       setCustomers(data);
     };
@@ -29,7 +29,7 @@ const Customer = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://time-to-clean-api.vercel.app/customers/${id}?thumb=${thumb}`
+          .delete(`https://time-to-clean-api.up.railway.app/customers/${id}?thumb=${thumb}`
           )
           .catch((error) => {
             Swal.fire({

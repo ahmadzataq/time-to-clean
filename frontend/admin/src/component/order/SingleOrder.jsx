@@ -16,7 +16,7 @@ const SingleOrder = () => {
   const [items, setitems] = useState([]);
   useEffect(() => {
     const fatchOrder = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.vercel.app/orders/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/orders/${id}`);
       setOrder(data);
       setitems(data.items);
       setStatus(data.status);
@@ -34,7 +34,7 @@ const SingleOrder = () => {
       expTime: expDate + "," + expTime,
     };
     axios
-      .put(`https://time-to-clean-api.vercel.app/orders/${id}`, updateData, {
+      .put(`https://time-to-clean-api.up.railway.app/orders/${id}`, updateData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -69,7 +69,7 @@ const SingleOrder = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://time-to-clean-api.vercel.app/orders/${id}`)
+          .delete(`https://time-to-clean-api.up.railway.app/orders/${id}`)
           .then((response) => {
             Swal.fire({
               icon: "success",

@@ -9,7 +9,7 @@ const CartItems = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const { data } = await axios.get("https://time-to-clean-api.vercel.app/orders");
+        const { data } = await axios.get("https://time-to-clean-api.up.railway.app/orders");
 
         // Cek apakah data adalah array
         if (Array.isArray(data)) {
