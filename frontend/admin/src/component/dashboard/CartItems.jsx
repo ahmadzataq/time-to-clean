@@ -9,7 +9,7 @@ const CartItems = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const { data } = await axios.get("https://time-to-clean-api.up.railway.app/orders");
+        const { data } = await axios.get("https://time-to-clean-api.up.railway.app/api/admin/orders");
 
         // Cek apakah data adalah array
         if (Array.isArray(data)) {

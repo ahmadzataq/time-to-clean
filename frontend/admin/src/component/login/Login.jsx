@@ -14,7 +14,7 @@ const Login = () => {
       password,
     };
     axios
-      .post("https://time-to-clean-api.up.railway.app/adminlogin", data, {
+      .post("https://time-to-clean-api.up.railway.app/api/admin/adminlogin", data, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -12,7 +12,7 @@ const SingleCustomer = () => {
   const [customer, setCustomer] = useState({});
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/customers/${id}`
+      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/customers/${id}`
       );
       setCustomer(data);
     };
@@ -23,7 +23,7 @@ const SingleCustomer = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fatchOrders = async () => {
-      const { data } = await axios.get("https://time-to-clean-api.up.railway.app/orders"
+      const { data } = await axios.get("https://time-to-clean-api.up.railway.app/api/admin/orders"
       );
       const fatchOrders = data.filter((curData) => {
         return curData.customer_id === id;
@@ -45,7 +45,7 @@ const SingleCustomer = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://time-to-clean-api.up.railway.app/customers/${id}?thumb=${thumb}`
+          .delete(`https://time-to-clean-api.up.railway.app/api/admin/customers/${id}?thumb=${thumb}`
           )
           .then((response) => {
             Swal.fire({

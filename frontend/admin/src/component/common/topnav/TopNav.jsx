@@ -9,7 +9,7 @@ const TopNav = () => {
   const [admin, setAdmin] = useState({});
   useEffect(() => {
     const fatchAdmin = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/users/${id}`);
+      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/users/${id}`);
       setAdmin(data);
     };
     fatchAdmin();
