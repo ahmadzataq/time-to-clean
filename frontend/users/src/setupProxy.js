@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/router/auth',
     createProxyMiddleware({
-      target: 'http://localhost:4000',
+      target: 'https://time-to-clean-api.vercel.app',
       changeOrigin: true,
     })
   );
