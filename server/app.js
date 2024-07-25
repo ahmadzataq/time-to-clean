@@ -20,12 +20,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.options('*', (req, res) => {
-  res.header('Access-Control-Allow-Origin', 'https://time-to-clean-admin.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.send();
-});
+app.options('*', cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
