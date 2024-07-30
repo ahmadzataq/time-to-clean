@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/router/auth',
     createProxyMiddleware({
-      target: 'https://time-to-clean-api.up.railway.app',
+      target: 'http://zahid-server-be:3000',
       changeOrigin: true,
     })
   );

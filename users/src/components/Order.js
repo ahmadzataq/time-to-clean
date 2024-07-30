@@ -47,7 +47,7 @@ const Order = () => {
   const id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`https://time-to-clean-api.up.railway.app/api/admin/customers/${id}`);
+      const { data } = await axios.get(`http://zahid-server-be:3000/api/admin/customers/${id}`);
       setName(data.name);
       setEmail(data.email);
       setPhone(data.phone);
@@ -77,7 +77,7 @@ const Order = () => {
           total_price: cartTotal,
         };
         axios
-          .post(`https://time-to-clean-api.up.railway.app/api/admin/orders`, data, {
+          .post(`http://zahid-server-be:3000/api/admin/orders`, data, {
             headers: {
               "Content-Type": "application/json",
             },
