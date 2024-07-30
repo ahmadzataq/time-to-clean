@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://time-to-clean-api.up.railway.app",
+  "proxy": "http://zahid-server-be:3000",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
