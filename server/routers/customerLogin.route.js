@@ -1,8 +1,12 @@
 import express from "express";
 import Customers from "../models/customer.model.js";
-const router = express.Router();
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const router = express.Router();
 
 // CUSTOMER LOGIN
 router.post("/", async (req, res) => {
@@ -12,13 +16,16 @@ router.post("/", async (req, res) => {
     await Customers.findOne({ email: email }).then((user) => {
       if (user) {
         bcrypt.compare(password, user.password, (err, result) => {
+          if (err) {
+            return res.status(500).json({ message: "Error comparing passwords." });
+          }
           if (result === true) {
             const payload = {
               id: user._id,
               email: user.email,
             };
 
-            const token = jwt.sign(payload, process.env.SECRET_KEY, {
+            const token = jwt.sign(payload, process.env.JWT_SECRET, {
               expiresIn: "7d",
             });
 
@@ -30,15 +37,16 @@ router.post("/", async (req, res) => {
               name: user.name,
             });
           } else {
-            return res.json({ message: "Password tidak cocok." });
+            return res.status(401).json({ message: "Password tidak cocok." });
           }
         });
       } else {
-        return res.json({ message: "Email tidak terdaftar." });
+        return res.status(404).json({ message: "Email tidak terdaftar." });
       }
     });
   } catch (error) {
     return res.status(500).send({ message: "Terjadi kesalahan." });
   }
 });
+
 export default router;
