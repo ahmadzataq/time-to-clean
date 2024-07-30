@@ -35,7 +35,7 @@ const Login = () => {
         address,
       };
       axios
-        .post(`http://zahid-server-be:3000/api/admin/customers`, data, {
+        .post(`http://103.17.248.249:3000/api/admin/customers`, data, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -87,7 +87,7 @@ const Login = () => {
       password: loginPass,
     };
     axios
-      .post(`http://zahid-server-be:3000/api/admin/login/`, data, {
+      .post(`http://103.17.248.249:3000/api/admin/login/`, data, {
         headers: {
           "Content-Type": "application/json",
         },

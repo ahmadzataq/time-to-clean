@@ -22,7 +22,7 @@ const ChangePwd = () => {
   const id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`http://zahid-server-be:3000/api/admin/customers/${id}`);
+      const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/customers/${id}`);
       setThumb(data.thumb);
       setEmail(data.email);
     };
@@ -39,7 +39,7 @@ const ChangePwd = () => {
         thumb: currentThumb,
       };
       axios
-        .put(`http://zahid-server-be:3000/api/admin/customers/${id}?cthumb=${currentThumb}`, updateData, {
+        .put(`http://103.17.248.249:3000/api/admin/customers/${id}?cthumb=${currentThumb}`, updateData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

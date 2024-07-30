@@ -13,7 +13,7 @@ const OrderDetails = () => {
   const [items, setitems] = useState([]);
   useEffect(() => {
     const fatchOrder = async () => {
-      const { data } = await axios.get(`http://zahid-server-be:3000/api/admin/orders/${id}`);
+      const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/orders/${id}`);
       setOrder(data);
       setitems(data.items);
     };
@@ -32,7 +32,7 @@ const OrderDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://zahid-server-be:3000/api/admin/orders/${id}`)
+          .delete(`http://103.17.248.249:3000/api/admin/orders/${id}`)
           .then((response) => {
             Swal.fire({
               icon: "success",
@@ -68,7 +68,7 @@ const OrderDetails = () => {
           status: "Selesai",
         };
         axios
-          .put(`http://zahid-server-be:3000/api/admin/orders/${id}`, updateData, {
+          .put(`http://103.17.248.249:3000/api/admin/orders/${id}`, updateData, {
             headers: {
               "Content-Type": "application/json",
             },
@@ -107,7 +107,7 @@ const OrderDetails = () => {
           pendingPayment: "Sent",
         };
         axios
-          .put(`http://zahid-server-be:3000/api/admin/orders/${id}`, updateData, {
+          .put(`http://103.17.248.249:3000/api/admin/orders/${id}`, updateData, {
             headers: {
               "Content-Type": "application/json",
             },

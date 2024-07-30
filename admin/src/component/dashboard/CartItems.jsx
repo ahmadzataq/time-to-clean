@@ -9,7 +9,7 @@ const CartItems = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const { data } = await axios.get("http://zahid-server-be:3000/api/admin/orders");
+        const { data } = await axios.get("http://103.17.248.249:3000/api/admin/orders");
 
         // Cek apakah data adalah array
         if (Array.isArray(data)) {

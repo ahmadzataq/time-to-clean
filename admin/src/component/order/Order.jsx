@@ -11,7 +11,7 @@ const Order = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fatchOrders = async () => {
-      const { data } = await axios.get("http://zahid-server-be:3000/api/admin/orders");
+      const { data } = await axios.get("http://103.17.248.249:3000/api/admin/orders");
       setOrders(data);
     };
     fatchOrders();
@@ -29,7 +29,7 @@ const Order = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://zahid-server-be:3000/api/admin/orders/${id}`)
+          .delete(`http://103.17.248.249:3000/api/admin/orders/${id}`)
           .then((response) => {
             Swal.fire({
               icon: "success",
