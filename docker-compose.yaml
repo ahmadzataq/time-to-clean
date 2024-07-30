@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  admin:
+    build: ./admin
+    container_name: zahid-admin-ui
+    ports:
+      - "3001:3001"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - server
+    networks:
+      - mern-network
+
+  users:
+    build: ./users
+    container_name: zahid-users-ui
+    ports:
+      - "3002:3002"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - server
+    networks:
+      - mern-network
+
+  server:
+    build: ./server
+    container_name: zahid-server-be
+    restart: always
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - database
+    networks:
+      - mern-network
+
+  database:
+    image: mongo:4.4.18
+    container_name: zahid-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/w1thre/zahid/mongo-backup:/data/db
+    networks:
+      - mern-network
+
+networks:
+  mern-network:
+    driver: bridge
