@@ -12,15 +12,21 @@ dotenv.config();
 connectDB();
 const app = express();
 
-const corsOptions = {
-  // origin: ['https://time-to-clean-admin.vercel', 'https://time-to-clean.vercel.app'],
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
+// const corsOptions = {
+//   // origin: ['https://time-to-clean-admin.vercel', 'https://time-to-clean.vercel.app'],
+//   origin: '*',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.options('*', cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
