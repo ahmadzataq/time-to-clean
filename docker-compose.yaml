@@ -33,6 +33,10 @@ services:
       - "3000:3000"
     stdin_open: true
     tty: true
+    environment:
+      - JWT_SECRET=keepitsimple
+      - DB_URL=mongodb://zahid-mongodb/TimeToClean
+      - PORT=3000
     depends_on:
       - database
     networks:
