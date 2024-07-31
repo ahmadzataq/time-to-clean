@@ -19,54 +19,55 @@ const Login = () => {
           "Content-Type": "application/json",
         },
       })
-      .then((user) => {
-        if (user.data.message === "Email doesn't exist.") {
-          setMessage(user.data.message);
-        } else if (user.data.message === "Password doesn't match.") {
-          setMessage(user.data.message);
+      .then((response) => {
+        if (response.data.message === "Email doesn't exist.") {
+          setMessage(response.data.message);
+        } else if (response.data.message === "Password doesn't match.") {
+          setMessage(response.data.message);
         } else {
           // Set token
-          localStorage.setItem("aToken", user.data.token);
-          localStorage.setItem("aID", user.data.id);
+          localStorage.setItem("aToken", response.data.token);
+          localStorage.setItem("aID", response.data.id);
           window.location.href = "/dashboard";
         }
       })
       .catch((error) => {
-        setMessage("Something wrong.");
+        setMessage("Something went wrong.");
       });
   };
+
+  if (localStorage.getItem("aToken")) {
+    window.location.href = "/dashboard";
+    return null;
+  }
 
   return (
     <>
       <section className="login">
-        <div class="login-form text-center">
-          {localStorage.getItem("aToken") ? (
-            (window.location.href = "/")(<h3>Already Logged In</h3>)
-          ) : (
-            <form onSubmit={submitHandler}>
-              <p style={{ color: "red" }}>{message && message}</p>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email..."
-                required
-              />
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password..."
-                required
-              />
-              <input
-                type="submit"
-                name="submit"
-                value="Login"
-                class="btn-primary"
-              />
-            </form>
-          )}
+        <div className="login-form text-center">
+          <form onSubmit={submitHandler}>
+            <p style={{ color: "red" }}>{message && message}</p>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email..."
+              required
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password..."
+              required
+            />
+            <input
+              type="submit"
+              name="submit"
+              value="Login"
+              className="btn-primary"
+            />
+          </form>
         </div>
       </section>
     </>
