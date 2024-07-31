@@ -20,7 +20,7 @@ const Login = () => {
         },
       })
       .then((response) => {
-        if (response.data.message === "Email doesn't exist.") {
+        if (response.data.message === "Email tidak terdaftar.") {
           setMessage(response.data.message);
         } else if (response.data.message === "Password doesn't match.") {
           setMessage(response.data.message);
