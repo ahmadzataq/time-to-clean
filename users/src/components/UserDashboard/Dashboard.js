@@ -31,9 +31,14 @@ const Dashboard = () => {
       try {
         const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/orders`);
         console.log("Data received:", data); // Debug log for received data
-        const ordersData = data.orders || []; // Ensure the correct structure
+
+        const ordersData = data.orders || data; // Adjust based on structure
         if (Array.isArray(ordersData)) {
-          const customerOrders = ordersData.filter((curData) => curData.customer_id === customer_id);
+          console.log("ordersData is an array");
+          const customerOrders = ordersData.filter((curData) => {
+            console.log(`Comparing ${curData.customer_id} with ${customer_id}`);
+            return curData.customer_id === customer_id;
+          });
           console.log("Filtered customer orders:", customerOrders); // Debug log for filtered orders
           setOrders(customerOrders);
         } else {
