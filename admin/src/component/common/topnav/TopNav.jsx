@@ -4,16 +4,25 @@ import { Link } from "react-router-dom";
 import "./topnav.css";
 
 const TopNav = () => {
-  // GET ADMIN DETAILS
   const id = localStorage.getItem("aID");
   const [admin, setAdmin] = useState({});
+
   useEffect(() => {
-    const fatchAdmin = async () => {
-      const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/users/${id}`);
-      setAdmin(data);
+    const fetchAdmin = async () => {
+      if (id) {
+        try {
+          const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/users/${id}`);
+          setAdmin(data);
+        } catch (error) {
+          console.error("Error fetching admin data:", error);
+        }
+      } else {
+        console.error("Admin ID is not found in localStorage");
+      }
     };
-    fatchAdmin();
-  }, [admin]);
+
+    fetchAdmin();
+  }, [id]);
 
   const logout = () => {
     localStorage.removeItem("aToken");
@@ -21,7 +30,7 @@ const TopNav = () => {
     window.location.href = "http://103.17.248.249:3001";
   };
 
-  return (  
+  return (
     <>
       <section className="top-nav">
         <div className="top-nav-wrapper">
@@ -29,7 +38,7 @@ const TopNav = () => {
             <ul>
               <li>
                 <Link to="/" title="Home">
-                  <i class="ri-home-4-line"></i>
+                  <i className="ri-home-4-line"></i>
                 </Link>
               </li>
               <li>
