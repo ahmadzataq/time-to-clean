@@ -34,24 +34,24 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - SECRET_KEY=semogatidakbug
-      - JWT_SECRET=semogatidakbug
-      - DB_URL=mongodb://zahid-mongodb/TimeToClean
-      - PORT=3000
-    depends_on:
-      - database
+      - SECRET_KEY=${SECRET_KEY}
+      - JWT_SECRET=${JWT_SECRET}
+      - DB_URL=${DB_URL}
+      - PORT=${PORT}
+    # depends_on:
+    #   - database
     networks:
       - mern-network
 
-  database:
-    image: mongo:4.4.18
-    container_name: zahid-mongodb
-    ports:
-      - "27017:27017"
-    volumes:
-      - /home/w1thre/zahid/mongo-backup:/data/db
-    networks:
-      - mern-network
+  # database:
+  #   image: mongo:4.4.18
+  #   container_name: zahid-mongodb
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - /home/w1thre/zahid/mongo-backup:/data/db
+  #   networks:
+  #     - mern-network
 
 networks:
   mern-network:
