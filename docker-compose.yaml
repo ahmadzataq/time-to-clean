@@ -34,7 +34,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - SECRET_KEY=semogatidakbug
+      - JWT_SECRET=semogatidakbug
       - DB_URL=mongodb://zahid-mongodb/TimeToClean
       - PORT=3000
     depends_on:
