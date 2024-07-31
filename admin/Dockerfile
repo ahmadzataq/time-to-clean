@@ -9,7 +9,9 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-# COPY ./build/static ./public/
+
+# Correct the source directory if needed
+COPY ./build ./public
 
 RUN chmod +x node_modules/.bin/react-scripts
 
