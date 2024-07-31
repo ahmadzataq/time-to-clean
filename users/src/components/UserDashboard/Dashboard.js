@@ -10,14 +10,18 @@ import Swal from "sweetalert2";
 const Dashboard = () => {
   // GET CUSTOMER DETAILS
   const id = localStorage.getItem("cID");
-  const [setCustomer] = useState({});
+  const [customer, setCustomer] = useState({});
   useEffect(() => {
     const fetchCustomer = async () => {
-      const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/customers/${id}`);
-      setCustomer(data);
+      try {
+        const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/customers/${id}`);
+        setCustomer(data);
+      } catch (error) {
+        console.error("Error fetching customer data:", error);
+      }
     };
     fetchCustomer();
-  }, [id, setCustomer]);
+  }, [id]);
 
   // GET ORDERS
   const [orders, setOrders] = useState([]);
