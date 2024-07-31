@@ -30,10 +30,11 @@ const Dashboard = () => {
     const fetchOrders = async () => {
       try {
         const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/orders`);
-        console.log("Data received:", data); // Tambahkan log ini
-        const ordersData = data.orders || []; // Sesuaikan dengan struktur respons yang benar
+        console.log("Data received:", data); // Debug log for received data
+        const ordersData = data.orders || []; // Ensure the correct structure
         if (Array.isArray(ordersData)) {
           const customerOrders = ordersData.filter((curData) => curData.customer_id === customer_id);
+          console.log("Filtered customer orders:", customerOrders); // Debug log for filtered orders
           setOrders(customerOrders);
         } else {
           console.error("Data received is not an array:", ordersData);
@@ -181,32 +182,31 @@ const Dashboard = () => {
                               : moment(item.expTime).format("lll")}
                           </td>
                           <td>
-                          {(item.status === "Diproses" ||
-                            item.status === "Pickup") && (
-                            <Link
-                              className="btn-small"
-                              onClick={() => acceptHandler(item._id)}
-                            >
-                              ACCEPT
-                            </Link>
-                          )}
-                          {(item.status === "Selesai" ||
-                            item.status === "Batal" ||
-                            item.status === "Diterima") && (
-                            <Link className="btn-small disableLink">
-                              ACCEPT
-                            </Link>
-                          )}
-                          {item.status === "Dipesan" && (
-                            <Link
-                              onClick={() => deleteHandler(item._id)}
-                              className="btn-small danger-btn"
-                            >
-                              CANCEL
-                            </Link>
-                          )}
-                        </td>
-                        </tr>                    
+                            {(item.status === "Diproses" || item.status === "Pickup") && (
+                              <Link
+                                className="btn-small"
+                                onClick={() => acceptHandler(item._id)}
+                              >
+                                ACCEPT
+                              </Link>
+                            )}
+                            {(item.status === "Selesai" ||
+                              item.status === "Batal" ||
+                              item.status === "Diterima") && (
+                              <Link className="btn-small disableLink">
+                                ACCEPT
+                              </Link>
+                            )}
+                            {item.status === "Dipesan" && (
+                              <Link
+                                onClick={() => deleteHandler(item._id)}
+                                className="btn-small danger-btn"
+                              >
+                                CANCEL
+                              </Link>
+                            )}
+                          </td>
+                        </tr>
                       ))
                     )}
                   </tbody>
