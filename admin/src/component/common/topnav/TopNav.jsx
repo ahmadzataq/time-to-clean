@@ -27,7 +27,7 @@ const TopNav = () => {
   const logout = () => {
     localStorage.removeItem("aToken");
     localStorage.removeItem("aID");
-    window.location.href = "http://103.17.248.249:3001";
+    window.location.href = "/";
   };
 
   return (

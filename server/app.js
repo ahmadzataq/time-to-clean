@@ -14,8 +14,8 @@ const app = express();
 
 const corsOptions = {
   // origin: ['https://time-to-clean-admin.vercel', 'https://time-to-clean.vercel.app'],
-  origin: '*',
-  origin: ['http://103.17.248.249:3001', 'http://103.17.248.249:3002'],
+  // origin: '*',
+  // origin: ['http://103.17.248.249:3001', 'http://103.17.248.249:3002'],
   origin: ['http://admin.timetoclean.shop', 'http://timetoclean.shop'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
   allowedHeaders: ['Content-Type', 'Authorization']
