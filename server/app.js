@@ -17,6 +17,7 @@ const corsOptions = {
   // origin: '*',
   // origin: ['http://103.17.248.249:3001', 'http://103.17.248.249:3002'],
   origin: ['http://admin.timetoclean.shop', 'http://timetoclean.shop'],
+  origin: ['https://admin.timetoclean.shop', 'https://timetoclean.shop'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'], 
   allowedHeaders: ['Content-Type', 'Authorization']
 };
