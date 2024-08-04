@@ -14,7 +14,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCustomer = async () => {
       try {
-        const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/customers/${id}`);
+        const { data } = await axios.get(`https://be.timetoclean.shop/api/admin/customers/${id}`);
         setCustomer(data);
       } catch (error) {
         console.error("Error fetching customer data:", error);
@@ -29,7 +29,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/orders`);
+        const { data } = await axios.get(`https://be.timetoclean.shop/api/admin/orders`);
         console.log("Data received:", data); // Debug log for received data
 
         const ordersData = data.orders || data; // Adjust based on structure

@@ -11,7 +11,7 @@ const TopNav = () => {
     const fetchAdmin = async () => {
       if (id) {
         try {
-          const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/users/${id}`);
+          const { data } = await axios.get(`https://be.timetoclean.shop/api/admin/users/${id}`);
           setAdmin(data);
         } catch (error) {
           console.error("Error fetching admin data:", error);

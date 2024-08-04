@@ -16,7 +16,7 @@ const ProfilePic = () => {
   const id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/customers/${id}`);
+      const { data } = await axios.get(`https://be.timetoclean.shop/api/admin/customers/${id}`);
       setThumb(data.thumb);
     };
     fatchCustomer();
@@ -28,7 +28,7 @@ const ProfilePic = () => {
       thumb: document.querySelector("#thumb").files[0],
     };
     axios
-      .put(`http://103.17.248.249:3000/api/admin/customers/${id}?cthumb=${currentThumb}`, updateData, {
+      .put(`https://be.timetoclean.shop/api/admin/customers/${id}?cthumb=${currentThumb}`, updateData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

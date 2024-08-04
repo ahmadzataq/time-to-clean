@@ -14,7 +14,7 @@ const Login = () => {
       password,
     };
     axios
-      .post("http://103.17.248.249:3000/api/admin/adminlogin", data, {
+      .post("https://be.timetoclean.shop/api/admin/adminlogin", data, {
         headers: {
           "Content-Type": "application/json",
         },

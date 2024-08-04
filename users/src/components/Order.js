@@ -47,7 +47,7 @@ const Order = () => {
   const id = localStorage.getItem("cID");
   useEffect(() => {
     const fatchCustomer = async () => {
-      const { data } = await axios.get(`http://103.17.248.249:3000/api/admin/customers/${id}`);
+      const { data } = await axios.get(`https://be.timetoclean.shop/api/admin/customers/${id}`);
       setName(data.name);
       setEmail(data.email);
       setPhone(data.phone);
@@ -77,7 +77,7 @@ const Order = () => {
           total_price: cartTotal,
         };
         axios
-          .post(`http://103.17.248.249:3000/api/admin/orders`, data, {
+          .post(`https://be.timetoclean.shop/api/admin/orders`, data, {
             headers: {
               "Content-Type": "application/json",
             },

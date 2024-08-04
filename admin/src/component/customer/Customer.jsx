@@ -10,7 +10,7 @@ const Customer = () => {
   const [customers, setCustomers] = useState([]);
   useEffect(() => {
     const fatchCustomers = async () => {
-      const { data } = await axios.get("http://103.17.248.249:3000/api/admin/customers"
+      const { data } = await axios.get("https://be.timetoclean.shop/api/admin/customers"
       );
       setCustomers(data);
     };
@@ -29,7 +29,7 @@ const Customer = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://103.17.248.249:3000/api/admin/customers/${id}?thumb=${thumb}`
+          .delete(`https://be.timetoclean.shop/api/admin/customers/${id}?thumb=${thumb}`
           )
           .catch((error) => {
             Swal.fire({

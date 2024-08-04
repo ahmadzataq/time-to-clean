@@ -10,7 +10,7 @@ const CompleteOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fatchOrders = async () => {
-      const { data } = await axios.get("http://103.17.248.249:3000/api/admin/orders"
+      const { data } = await axios.get("https://be.timetoclean.shop/api/admin/orders"
       );
       const completeOrder = data.filter((curData) => {
         return curData.status.toLowerCase() === "selesai";
